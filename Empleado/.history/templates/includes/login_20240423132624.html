@@ -1,0 +1,55 @@
+﻿{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Color Admin | Login Page</title>
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+	<meta content="" name="description">
+	<meta content="" name="author">
+	
+	<!-- ================== BEGIN BASE CSS STYLE ================== -->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+	<link href="{% static '\assets\css\default\app.min.css' %}" rel="stylesheet">
+	<!-- ================== END BASE CSS STYLE ================== -->
+</head>
+<body class="pace-top">
+	<div id="page-loader" class="fade show"><span class="spinner"></span></div>
+	<div id="page-container" class="fade">
+		<div class="login login-v1">
+			<div class="login-container">
+				<div class="login-header">
+					<div class="brand">
+						<span class="logo"></span> <b>Color</b> Admin
+						<small>Bienvenido a ColorAdmin</small>
+					</div>
+					<div class="icon">
+						<i class="fa fa-lock"></i>
+					</div>
+				</div>
+				<div class="login-body">
+					<div class="login-content">
+						<form action="index.html" method="GET" class="margin-bottom-0">
+							<div class="form-group m-b-20">
+								<input type="text" class="form-control form-control-lg inverse-mode" placeholder="Email Address" required="">
+							</div>
+							<div class="form-group m-b-20">
+								<input type="password" class="form-control form-control-lg inverse-mode" placeholder="Password" required="">
+							</div>
+							<div class="checkbox checkbox-css m-b-20">
+								<input type="checkbox" id="remember_checkbox"> 
+								<label for="remember_checkbox">
+								Esta es una prueba de errores
+								</label>
+							</div>
+							<div class="login-buttons">
+								<button type="submit" class="btn btn-success btn-block btn-lg">Sign me in</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

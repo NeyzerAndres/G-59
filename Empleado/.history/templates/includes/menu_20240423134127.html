@@ -1,0 +1,37 @@
+{
+{% load static %}
+
+<aside class="left-sidebar">
+    <!-- Sidebar scroll-->
+    <div class="scroll-sidebar">
+        <!-- Sidebar navigation-->
+        <nav class="sidebar-nav">
+            <ul id="sidebarnav">
+                <li class="user-profile">
+                    <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><img src="{% static 'assets/images/users/useravatar_99703.png' %}" alt="user" />
+                        {% if user.is_authenticated %}|
+                            <span class="hide-menu">{{ user.username }}</span>
+                        {% else %}
+                            <span class="hide-menu">usuario por ajustar</span>
+                        {% endif %}
+                    </a>
+                    <ul aria-expanded="false" class="collapse">
+                        <li><a href="javascript:void()">Mi Perfil </a></li>
+                        <li><a href="javascript:void()">Configuracion</a></li>
+                    </ul>
+                </li>
+                <li class="nav-devider"></li>
+                <li class="nav-small-cap">INFORMACION GENERAL</li>
+                <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-alert-octagon"></i><span class="hide-menu">Objeciones</span></a>
+                    <ul aria-expanded="false" class="collapse">
+                    </ul>
+                </li>
+
+                <li class="nav-small-cap">Prueba</li>
+                    <ul aria-expanded="false" class="collapse">
+                        <li><p>Esta es una prueba</p></li>
+
+            </ul>
+        </nav>
+    </div>
+</aside>

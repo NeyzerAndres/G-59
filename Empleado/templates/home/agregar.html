@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Django</title>
+</head>
+<body>
+    <h1 style ='color: blue'>Hola de las vistas</h1>
+    <h3>Trabajando mi patrón de diseño</h3>
+    <form method="POST">{% csrf_token %}
+        <label>Titulo: </label>
+        {{form.titulo}}
+        <label>Subtitulo: </label>
+        {{form.subtitulo}}
+        <button style="color:white; background-color: black;" stype="submit">Agergar</button> 
+    </form>
+
+    <!-- <input type="text" placeholder="Agregar Titulo">
+    <input type="text" placeholder="Agregar Subtitulo">
+    <button style="color:white; background-color: black;"    type="submit">Agergar</button> -->
+</body>
+</html> 

@@ -1,0 +1,120 @@
+{% extends 'includes/base.html' %}
+{% load static %}
+
+{% block titulo %}
+<title>{{titulo_app}} | {{titulo}}</title>
+{% endblock %}
+
+{% block titulo_page %}
+<h3 class="text-themecolor">{{titulo}}</h3>
+{% endblock titulo_page%}
+
+{% block ruta_page %}
+<li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+<li class="breadcrumb-item">{{item}}</li>
+<li class="breadcrumb-item active">{{subitem}}</li>
+{% endblock ruta_page%}
+
+{% block contenido %}
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <h3 class="card-title text-center">{{card_title}}</h3>
+                <div class="card-body">
+                    <h4 class="card-title">Mesa de Ayuda</h4>
+                    <h6 class="card-subtitle">Lista de Tickets</h6>
+                    <div class="row m-t-40">
+                        <!-- Column -->
+                        <div class="col-md-6 col-lg-3 col-xlg-3">
+                            <div class="card">
+                                <div class="box bg-info text-center">
+                                    <h1 class="font-light text-white">2,064</h1>
+                                    <h6 class="text-white">Total Tickets</h6>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Column -->
+                        <div class="col-md-6 col-lg-3 col-xlg-3">
+                            <div class="card">
+                                <div class="box bg-primary text-center" >
+                                    <h1 class="font-light text-white">0</h1>
+                                    <h6 class="text-white">En proceso</h6>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Column -->
+                        <div class="col-md-6 col-lg-3 col-xlg-3">
+                            <div class="card">
+                                <div class="box bg-success text-center">
+                                    <h1 class="font-light text-white">2,063</h1>
+                                    <h6 class="text-white">Finalizado</h6>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Column -->
+                        <div class="col-md-6 col-lg-3 col-xlg-3">
+                            <div class="card">
+                                <div class="box bg-dark text-center">
+                                    <h1 class="font-light text-white">1</h1>
+                                    <h6 class="text-white">Sin atender</h6>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Column -->
+                        <table id="demo-foo-addrow" class="table m-t-30 table-hover no-wrap contact-list footable-loaded footable" data-page-size="10">
+                            <thead>
+                                <tr>
+                                    <th class="footable-sortable">Ticket<span class="footable-sort-indicator"></span></th>
+                                    <th class="footable-sortable">Afectado<span class="footable-sort-indicator"></span></th>
+                                    <th class="footable-sortable">Solicitud<span class="footable-sort-indicator"></span></th>
+                                    <th class="footable-sortable">Fecha<span class="footable-sort-indicator"></span></th>
+                                    <th class="footable-sortable">Estado<span class="footable-sort-indicator"></span></th>
+                                    <th class="footable-sortable">Analista<span class="footable-sort-indicator"></span></th>
+                                    <th class="footable-sortable">Editar<span class="footable-sort-indicator"></span></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="footable-even" >
+                                    <td><span class="footable-toggle"></span>1011</td>
+                                    <td>Kevin Machuca</td>
+                                    <td>PC NO ENCIENDE</td>
+                                    <td>02-04-2024</td>
+                                    <td>Sin atender</td>
+                                    <td>Emanuel Vargas</td>
+                                    <td>
+                                        <button style="background-color: black;" type="button" class="btn btn-circle btn-primary"><i class="mdi mdi-grease-pencil"></i></button> 
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="2">
+                                        <button type="button" class="btn btn-info btn-rounded" data-toggle="modal" data-target="#add-contact">Agregar Ticket</button>
+                                    </td>
+                                    
+                                    <td colspan="6">
+                                        <div class="text-right">
+                                            <ul class="pagination"> <li class="footable-page-arrow disabled"><a data-page="first" href="#first">«</a></li><li class="footable-page-arrow disabled"><a data-page="prev" href="#prev">‹</a></li><li class="footable-page active"><a data-page="0" href="#">1</a></li><li class="footable-page"><a data-page="1" href="#">2</a></li><li class="footable-page-arrow"><a data-page="next" href="#next">›</a></li><li class="footable-page-arrow"><a data-page="last" href="#last">»</a></li></ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+{% endblock %}
+
+{% block script %}
+    <!-- This is data table -->
+    <script src="{% static 'assets/plugins/datatables/jquery.dataTables.min.js' %}"></script>
+    <!-- start - This is for export functionality only -->
+    <script src="https://cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.flash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
+    <script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
+    <script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.print.min.js"></script>
+    <!-- end - This is for export functionality only -->
+{% endblock script %}

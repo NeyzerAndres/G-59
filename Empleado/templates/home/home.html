@@ -1,0 +1,68 @@
+{% extends 'includes/base.html' %}
+{% load static %}
+
+{% block titulo %}
+<title>SimuManagePlus | Seguimientos</title>
+{% endblock %}
+
+{% block estilos %}
+
+{% endblock estilos%}
+
+{% block titulo_page %}
+<h3 class="text-themecolor">Dashboard</h3>
+{% endblock titulo_page%}
+
+{% block ruta_page %}
+<li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+<li class="breadcrumb-item">Apps</li>
+<li class="breadcrumb-item active">Dashboard 4</li>
+{% endblock ruta_page%}
+
+{% block contenido %}
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="card">
+                    <div class="card-body p-b-0">
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs customtab" role="tablist">
+                        
+                        {% if 'falabella_vigente' in grupos %}
+                        <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#dashboard_fbv" role="tab"><span class="hidden-sm-up"><i class="ti-home"></i></span> <span class="hidden-xs-down">Falabella Vigente</span></a> </li>
+                        {% endif %}
+                        
+                        {% if 'formacion' in grupos %}
+                        <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#dashboard_formacion" role="tab"><span class="hidden-sm-up"><i class="ti-user"></i></span> <span class="hidden-xs-down">Formacion</span></a> </li>
+                        {% endif %}
+
+                    </ul>
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        
+                        {% if 'falabella_vigente' in grupos %}
+                        <div class="tab-pane active" id="dashboard_fbv" role="tabpanel">
+                            <div class="p-20">
+                                <iframe title="Productividad Diaria" width="100%" height="580" src="https://app.powerbi.com/view?r=eyJrIjoiODk0OTkwZjAtNjZhZi00YmE4LTkwNmItNzBhZDJlNjRkNDk4IiwidCI6IjgwYWQwOTc3LTc0MmItNDk3Yi1iNzRiLThkZjRhYmNjNGUzYiJ9" frameborder="0" allowFullScreen="true"></iframe>
+                            </div>
+                        </div>
+                        {% endif %}
+
+                        {% if 'formacion' in grupos %}
+                        <div class="tab-pane  p-20" id="dashboard_formacion" role="tabpanel">
+                            <iframe title="FormacionPW 2" width="100%" height="810" src="https://app.powerbi.com/view?r=eyJrIjoiYWEyODRiMTMtYWMwZC00NTFiLThhMTYtNTllMmI3MGVhYTQ2IiwidCI6IjgwYWQwOTc3LTc0MmItNDk3Yi1iNzRiLThkZjRhYmNjNGUzYiJ9" frameborder="0" allowFullScreen="true"></iframe>
+                        </div>
+                        {% endif %}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block script %}
+
+{% endblock script %}

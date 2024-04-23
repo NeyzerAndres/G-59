@@ -1,0 +1,26 @@
+{% extends 'includes/header.html' %}
+{% load static %}
+{% block contenido %}
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>Color Admin | Bootstrap 4</title>
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+	<link href="{% static '\assets\css\default\app.min.css' %}" rel="stylesheet">
+	<!-- ================== END BASE CSS STYLE ================== -->
+</head>
+<body>
+
+    <div id="content" class="content">
+			<ol class="breadcrumb float-xl-right">
+				<li class="breadcrumb-item"><a href="javascript:;">Home</a></li>
+				<li class="breadcrumb-item active">Bootstrap 4</li>
+			</ol>
+		<h1 class="page-header m-b-10">Bootstrap 4 <small>header small text goes here...</small></h1>
+    </div>
+</body>
+</html>
+{% endblock %}
