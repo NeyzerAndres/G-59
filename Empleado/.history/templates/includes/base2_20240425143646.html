@@ -1,0 +1,82 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>
+		{% block titulo %}
+
+		{% endblock titulo %}
+	</title>	
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+	<!-- ================== BEGIN BASE CSS STYLE ================== -->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+	<link href="{% static '\assets\css\default\app.min.css' %}" rel="stylesheet">
+	<!-- ================== END BASE CSS STYLE ================== -->
+    <link href="{% static '\assets\plugins\jvectormap-next\jquery-jvectormap.css' %}" rel="stylesheet">
+	<link href="{% static '\assets\plugins\bootstrap-datepicker\dist\css\bootstrap-datepicker.css' %}" rel="stylesheet">
+	<link href="{{% static '\assets\plugins\gritter\css\jquery.gritter.css' %}" rel="stylesheet">
+</head>
+<body>
+    <div id="page-loader" class="fade show"><span class="spinner"></span></div>
+	    <div id="page-container" class="page-container fade page-sidebar-fixed page-header-fixed">
+            {% include 'includes/header2.html' %}
+            {% include 'includes/menu2.html' %}
+            <div id="content" class="content">
+                <!-- begin breadcrumb -->
+                <ol class="breadcrumb float-xl-right">
+                    <li class="breadcrumb-item"><a href="javascript:;">Home</a></li>
+                    <li class="breadcrumb-item active">Dashboard</li>
+                </ol>
+                <!-- end breadcrumb -->
+                <!-- begin page-header -->
+                <h1 class="page-header">Dashboard <small>header small text goes here...</small></h1>
+                <!-- end page-header -->
+                
+                {% block contenido %}
+                    
+                {% endblock contenido %}
+            
+                {% include 'includes/config.html' %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src=" {% static '\assets\js\app.min.js' %}"></script>
+    <script src="{% static '\assets\js\theme\default.min.js' %}"></script>
+	
+	<!-- ================== BEGIN PAGE LEVEL JS ================== -->
+	<script src="{% static '\assets\plugins\gritter\js\jquery.gritter.js' %}"></script>
+	<script src="{% static '\assets\plugins\flot\jquery.flot.js' %}"></script>
+	<script src="{% static '\assets\plugins\flot\jquery.flot.time.js' %}"></script>
+	<script src="{% static '\assets\plugins\flot\jquery.flot.resize.js' %}"></script>
+	<script src="{% static '\assets\plugins\flot\jquery.flot.pie.js' %}"></script>
+	<script src="..\assets\plugins\jquery-sparkline\jquery.sparkline.min.js"></script>
+	<script src="..\assets\plugins\jvectormap-next\jquery-jvectormap.min.js"></script>
+	<script src="..\assets\plugins\jvectormap-next\jquery-jvectormap-world-mill.js"></script>
+	<script src="..\assets\plugins\bootstrap-datepicker\dist\js\bootstrap-datepicker.js"></script>
+	<script src="..\assets\js\demo\dashboard.js"></script>
+	<!-- ================== END PAGE LEVEL JS ================== -->
+
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-53034621-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+    
+    {% block scripts %}
+        
+    {% endblock scripts %}
+        
+
+</body>
+
+
+            
+</html>
+
+
+

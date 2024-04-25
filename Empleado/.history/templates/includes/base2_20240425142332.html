@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>
+		{% block titulo %}
+
+		{% endblock titulo %}
+	</title>	
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+	<script src="{% static '\assets\js\app.min.js' %}"></script>
+	<!-- ================== BEGIN BASE CSS STYLE ================== -->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+	<link href="{% static '\assets\css\default\app.min.css' %}" rel="stylesheet">
+	<!-- ================== END BASE CSS STYLE ================== -->
+</head>
+<body>
+    <div id="page-loader" class="fade show"><span class="spinner"></span></div>
+	    <div id="page-container" class="page-container fade page-sidebar-fixed page-header-fixed">
+            {% include 'includes/header2.html' %}
+            {% include 'includes/menu2.html' %}
+            <div id="content" class="content">
+                <!-- begin breadcrumb -->
+                <ol class="breadcrumb float-xl-right">
+                    <li class="breadcrumb-item"><a href="javascript:;">Home</a></li>
+                    <li class="breadcrumb-item active">Dashboard</li>
+                </ol>
+                <!-- end breadcrumb -->
+                <!-- begin page-header -->
+                <h1 class="page-header">Dashboard <small>header small text goes here...</small></h1>
+                <!-- end page-header -->
+                
+                {% block contenido %}
+                    
+                {% endblock contenido %}
+<body>
+    
+</body>
+
+
+					
+</html>
+
+
+

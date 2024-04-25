@@ -1,0 +1,139 @@
+{% load static %}
+<div id="sidebar" class="sidebar">
+    <!-- begin sidebar scrollbar -->
+    <div data-scrollbar="true" data-height="100%">
+        <!-- begin sidebar user -->
+        <ul class="nav">
+            <li class="nav-profile">
+                <a href="javascript:;" data-toggle="nav-profile">
+                    <div class="cover with-shadow"></div>
+                    <div class="image">
+                        <img src="{% static '\assets\img\user\user-13.jpeg' %}" alt="">
+                    </div>
+                    <div class="info">
+                        <b class="caret pull-right"></b>
+                        Sean Ngu
+                        <small>Front end developer</small>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <ul class="nav nav-profile">
+                    <li><a href="javascript:;"><i class="fa fa-cog"></i> Settings</a></li>
+                    <li><a href="javascript:;"><i class="fa fa-pencil-alt"></i> Send Feedback</a></li>
+                    <li><a href="javascript:;"><i class="fa fa-question-circle"></i> Helps</a></li>
+                </ul>
+            </li>
+        </ul>
+        <!-- end sidebar user -->
+        <!-- begin sidebar nav -->
+        <ul class="nav">
+            <li class="nav-header">Navigation</li>
+            <li class="has-sub">
+                <a href="javascript:;">
+                    <b class="caret"></b>
+                    <i class="fa fa-th-large"></i>
+                    <span>Dashboard</span>
+                </a>
+                <ul class="sub-menu">
+                    <li><a href="index-1.html">Dashboard v1</a></li>
+                    <li><a href="index_v2.html">Dashboard v2</a></li>
+                    <li><a href="index_v3.html">Dashboard v3</a></li>
+                </ul>
+            </li>
+            <li class="has-sub">
+                <a href="javascript:;">
+                    <b class="caret"></b>
+                    <i class="fa fa-image"></i>
+                    <span>Gallery</span>
+                </a>
+                <ul class="sub-menu">
+                    <li><a href="gallery.html">Gallery v1</a></li>
+                    <li><a href="gallery_v2.html">Gallery v2</a></li>
+                </ul>
+            </li>
+
+            <li class="has-sub">
+                <a href="javascript:;">
+                    <b class="caret"></b>
+                    <i class="fa fa-key"></i>
+                    <span>Login & Register</span>
+                </a>
+                <ul class="sub-menu">
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="login_v2.html">Login v2</a></li>
+                    <li><a href="login_v3.html">Login v3</a></li>
+                    <li><a href="register_v3.html">Register v3</a></li>
+                </ul>
+            </li>
+            <li class="has-sub">
+                <a href="javascript:;">
+                    <b class="caret"></b>
+                    <i class="fa fa-cubes"></i>
+                    <span>Version <span class="label label-theme">NEW</span></span>
+                </a>
+                <ul class="sub-menu">
+                    <li><a href="javascript:;">HTML</a></li>
+                    <li><a href="..\ajax\index.html">AJAX</a></li>
+                    <li><a href="..\angularjs\index.html">ANGULAR JS</a></li>
+                    <li><a href="..\angularjs8\index.html">ANGULAR JS 8 <i class="fa fa-paper-plane text-theme"></i></a></li>
+                    <li><a href="..\laravel\index.html">LARAVEL <i class="fa fa-paper-plane text-theme"></i></a></li>
+                    <li><a href="..\vuejs\index.html">VUE JS <i class="fa fa-paper-plane text-theme"></i></a></li>
+                    <li><a href="..\reactjs\index.html">REACT JS <i class="fa fa-paper-plane text-theme"></i></a></li>
+                    <li><a href="..\material\index.html">MATERIAL DESIGN</a></li>
+                    <li><a href="..\apple\index.html">APPLE DESIGN</a></li>
+                    <li><a href="..\transparent\index.html">TRANSPARENT DESIGN <i class="fa fa-paper-plane text-theme"></i></a></li>
+                    <li><a href="..\facebook\index.html">FACEBOOK DESIGN <i class="fa fa-paper-plane text-theme"></i></a></li>
+                </ul>
+            </li>
+            <li class="has-sub">
+                <a href="javascript:;">
+                    <b class="caret"></b>
+                    <i class="fa fa-medkit"></i>
+                    <span>Helper</span>
+                </a>
+                <ul class="sub-menu">
+                    <li><a href="helper_css.html">Predefined CSS Classes</a></li>
+                </ul>
+            </li>
+            <li class="has-sub">
+                <a href="javascript:;">
+                    <b class="caret"></b>
+                    <i class="fa fa-align-left"></i> 
+                    <span>Menu Level</span>
+                </a>
+                <ul class="sub-menu">
+                    <li class="has-sub">
+                        <a href="javascript:;">
+                            <b class="caret"></b>
+                            Menu 1.1
+                        </a>
+                        <ul class="sub-menu">
+                            <li class="has-sub">
+                                <a href="javascript:;">
+                                    <b class="caret"></b>
+                                    Menu 2.1
+                                </a>
+                                <ul class="sub-menu">
+                                    <li><a href="javascript:;">Menu 3.1</a></li>
+                                    <li><a href="javascript:;">Menu 3.2</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="javascript:;">Menu 2.2</a></li>
+                            <li><a href="javascript:;">Menu 2.3</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="javascript:;">Menu 1.2</a></li>
+                    <li><a href="javascript:;">Menu 1.3</a></li>
+                </ul>
+            </li>
+            <!-- begin sidebar minify button -->
+            <li><a href="javascript:;" class="sidebar-minify-btn" data-click="sidebar-minify"><i class="fa fa-angle-double-left"></i></a></li>
+            <!-- end sidebar minify button -->
+        </ul>
+        <!-- end sidebar nav -->
+    </div>
+    <!-- end sidebar scrollbar -->
+</div>
+<div class="sidebar-bg"></div>
+<!-- end #sidebar -->

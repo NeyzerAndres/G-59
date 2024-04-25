@@ -1,0 +1,980 @@
+{% extends 'includes/base.html' %}
+{% block contenido %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<!-- ================== BEGIN PAGE LEVEL STYLE ================== -->
+	<link href="..\assets\plugins\bootstrap-datepicker\dist\css\bootstrap-datepicker.css" rel="stylesheet">
+	<link href="..\assets\plugins\bootstrap-datepicker\dist\css\bootstrap-datepicker3.css" rel="stylesheet">
+	<link href="..\assets\plugins\ion-rangeslider\css\ion.rangeSlider.min.css" rel="stylesheet">
+	<link href="..\assets\plugins\bootstrap-colorpicker\dist\css\bootstrap-colorpicker.min.css" rel="stylesheet">
+	<link href="..\assets\plugins\bootstrap-timepicker\css\bootstrap-timepicker.min.css" rel="stylesheet">
+	<link href="..\assets\plugins\@danielfarrell\bootstrap-combobox\css\bootstrap-combobox.css" rel="stylesheet">
+	<link href="..\assets\plugins\bootstrap-select\dist\css\bootstrap-select.min.css" rel="stylesheet">
+	<link href="..\assets\plugins\tag-it\css\jquery.tagit.css" rel="stylesheet">
+	<link href="..\assets\plugins\bootstrap-daterangepicker\daterangepicker.css" rel="stylesheet">
+	<link href="..\assets\plugins\select2\dist\css\select2.min.css" rel="stylesheet">
+	<link href="..\assets\plugins\eonasdan-bootstrap-datetimepicker\build\css\bootstrap-datetimepicker.min.css" rel="stylesheet">
+	<link href="..\assets\plugins\bootstrap-colorpalette\css\bootstrap-colorpalette.css" rel="stylesheet">
+	<link href="..\assets\plugins\jquery-simplecolorpicker\jquery.simplecolorpicker.css" rel="stylesheet">
+	<link href="..\assets\plugins\jquery-simplecolorpicker\jquery.simplecolorpicker-fontawesome.css" rel="stylesheet">
+	<link href="..\assets\plugins\jquery-simplecolorpicker\jquery.simplecolorpicker-glyphicons.css" rel="stylesheet">
+	<!-- ================== END PAGE LEVEL STYLE ================== -->
+</head>
+<body>
+	<div class="row">
+		<!-- begin col-6 -->
+		<div class="col-xl-6 ui-sortable">
+			<!-- begin panel -->
+			<div class="panel panel-inverse" data-sortable-id="form-plugins-1">
+				<!-- begin panel-heading -->
+				<div class="panel-heading ui-sortable-handle">
+					<h4 class="panel-title">Bootstrap Date Time Picker</h4>
+					<div class="panel-heading-btn">
+						<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
+						<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-redo"></i></a>
+						<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+						<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
+					</div>
+				</div>
+				<!-- end panel-heading -->
+				<!-- begin panel-body -->
+				<div class="panel-body panel-form">
+					<form class="form-horizontal form-bordered">
+						<div class="form-group row">
+							<label class="col-lg-4 col-form-label">Default Date Time</label>
+							<div class="col-lg-8">
+								<div class="input-group date" id="datetimepicker1">
+									<input type="text" class="form-control">
+									<div class="input-group-addon">
+										<i class="fa fa-calendar"></i>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-lg-4 col-form-label">Custom Format</label>
+							<div class="col-lg-8">
+								<div class="input-group date" id="datetimepicker2">
+									<input type="text" class="form-control">
+									<span class="input-group-addon">
+									<i class="fa fa-clock"></i>
+									</span>
+								</div>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-lg-4 col-form-label">Linked Pickers</label>
+							<div class="col-lg-8">
+								<div class="row row-space-10">
+									<div class="col-xs-6 mb-2 mb-sm-0">
+										<input type="text" class="form-control" id="datetimepicker3" placeholder="Min Date">
+									</div>
+									<div class="col-xs-6">
+										<input type="text" class="form-control" id="datetimepicker4" placeholder="Max Date">
+									</div>
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+				<!-- end panel-body -->
+			</div>
+			<!-- end panel -->
+			<!-- begin panel -->
+			<div class="panel panel-inverse" data-sortable-id="form-plugins-2">
+				<!-- begin panel-heading -->
+				<div class="panel-heading ui-sortable-handle">
+					<h4 class="panel-title">Bootstrap Date Range Picker</h4>
+					<div class="panel-heading-btn">
+						<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
+						<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-redo"></i></a>
+						<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+						<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
+					</div>
+				</div>
+				<!-- end panel-heading -->
+				<!-- begin panel-body -->
+				<div class="panel-body panel-form">
+					<form class="form-horizontal form-bordered">
+						<div class="form-group row">
+							<label class="col-lg-4 col-form-label">Default Date Ranges</label>
+							<div class="col-lg-8">
+								<div class="input-group" id="default-daterange">
+									<input type="text" name="default-daterange" class="form-control" value="" placeholder="click to select the date range">
+									<span class="input-group-append">
+									<span class="input-group-text"><i class="fa fa-calendar"></i></span>
+									</span>
+								</div>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-lg-4 col-form-label">Advance Date Ranges</label>
+							<div class="col-lg-8">
+								<div id="advance-daterange" class="btn btn-default btn-block text-left f-s-12">
+									<i class="fa fa-caret-down pull-right m-t-2"></i>
+									<span>March 27, 2024 - April 25, 2024</span>
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+				<!-- end panel-body -->
+			</div>
+			<!-- end panel -->
+			<!-- begin panel -->
+			
+			<!-- end panel -->
+			<!-- begin panel -->
+			<div class="panel panel-inverse" data-sortable-id="form-plugins-4">
+				<!-- begin panel-heading -->
+				<div class="panel-heading ui-sortable-handle">
+					<h4 class="panel-title">Datepicker</h4>
+					<div class="panel-heading-btn">
+						<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
+						<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-redo"></i></a>
+						<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+						<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
+					</div>
+				</div>
+				<!-- end panel-heading -->
+				<!-- begin panel-body -->
+				<div class="panel-body panel-form">
+					<form class="form-horizontal form-bordered">
+						<div class="form-group row">
+							<label class="col-lg-4 col-form-label">Default Datepicker</label>
+							<div class="col-lg-8">
+								<input type="text" class="form-control" id="datepicker-default" placeholder="Select Date" value="04/1/2014">
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-lg-4 col-form-label">Inline Datepicker</label>
+							<div class="col-lg-8">
+								<div id="datepicker-inline">
+									<div></div>
+								<div class="datepicker datepicker-inline"><div class="datepicker-days" style=""><table class="table-condensed"><thead><tr><th colspan="7" class="datepicker-title" style="display: none;"></th></tr><tr><th class="prev">«</th><th colspan="5" class="datepicker-switch">April 2024</th><th class="next">»</th></tr><tr><th class="dow">Su</th><th class="dow">Mo</th><th class="dow">Tu</th><th class="dow">We</th><th class="dow">Th</th><th class="dow">Fr</th><th class="dow">Sa</th></tr></thead><tbody><tr><td class="old day" data-date="1711843200000">31</td><td class="day" data-date="1711929600000">1</td><td class="day" data-date="1712016000000">2</td><td class="day" data-date="1712102400000">3</td><td class="day" data-date="1712188800000">4</td><td class="day" data-date="1712275200000">5</td><td class="day" data-date="1712361600000">6</td></tr><tr><td class="day" data-date="1712448000000">7</td><td class="day" data-date="1712534400000">8</td><td class="day" data-date="1712620800000">9</td><td class="day" data-date="1712707200000">10</td><td class="day" data-date="1712793600000">11</td><td class="day" data-date="1712880000000">12</td><td class="day" data-date="1712966400000">13</td></tr><tr><td class="day" data-date="1713052800000">14</td><td class="day" data-date="1713139200000">15</td><td class="day" data-date="1713225600000">16</td><td class="day" data-date="1713312000000">17</td><td class="day" data-date="1713398400000">18</td><td class="day" data-date="1713484800000">19</td><td class="day" data-date="1713571200000">20</td></tr><tr><td class="day" data-date="1713657600000">21</td><td class="day" data-date="1713744000000">22</td><td class="day" data-date="1713830400000">23</td><td class="day" data-date="1713916800000">24</td><td class="today day" data-date="1714003200000">25</td><td class="day" data-date="1714089600000">26</td><td class="day" data-date="1714176000000">27</td></tr><tr><td class="day" data-date="1714262400000">28</td><td class="day" data-date="1714348800000">29</td><td class="day" data-date="1714435200000">30</td><td class="new day" data-date="1714521600000">1</td><td class="new day" data-date="1714608000000">2</td><td class="new day" data-date="1714694400000">3</td><td class="new day" data-date="1714780800000">4</td></tr><tr><td class="new day" data-date="1714867200000">5</td><td class="new day" data-date="1714953600000">6</td><td class="new day" data-date="1715040000000">7</td><td class="new day" data-date="1715126400000">8</td><td class="new day" data-date="1715212800000">9</td><td class="new day" data-date="1715299200000">10</td><td class="new day" data-date="1715385600000">11</td></tr></tbody><tfoot><tr><th colspan="7" class="today" style="display: none;">Today</th></tr><tr><th colspan="7" class="clear" style="display: none;">Clear</th></tr></tfoot></table></div><div class="datepicker-months" style="display: none;"><table class="table-condensed"><thead><tr><th colspan="7" class="datepicker-title" style="display: none;"></th></tr><tr><th class="prev">«</th><th colspan="5" class="datepicker-switch">2024</th><th class="next">»</th></tr></thead><tbody><tr><td colspan="7"><span class="month">Jan</span><span class="month">Feb</span><span class="month">Mar</span><span class="month focused">Apr</span><span class="month">May</span><span class="month">Jun</span><span class="month">Jul</span><span class="month">Aug</span><span class="month">Sep</span><span class="month">Oct</span><span class="month">Nov</span><span class="month">Dec</span></td></tr></tbody><tfoot><tr><th colspan="7" class="today" style="display: none;">Today</th></tr><tr><th colspan="7" class="clear" style="display: none;">Clear</th></tr></tfoot></table></div><div class="datepicker-years" style="display: none;"><table class="table-condensed"><thead><tr><th colspan="7" class="datepicker-title" style="display: none;"></th></tr><tr><th class="prev">«</th><th colspan="5" class="datepicker-switch">2020-2029</th><th class="next">»</th></tr></thead><tbody><tr><td colspan="7"><span class="year old">2019</span><span class="year">2020</span><span class="year">2021</span><span class="year">2022</span><span class="year">2023</span><span class="year focused">2024</span><span class="year">2025</span><span class="year">2026</span><span class="year">2027</span><span class="year">2028</span><span class="year">2029</span><span class="year new">2030</span></td></tr></tbody><tfoot><tr><th colspan="7" class="today" style="display: none;">Today</th></tr><tr><th colspan="7" class="clear" style="display: none;">Clear</th></tr></tfoot></table></div><div class="datepicker-decades" style="display: none;"><table class="table-condensed"><thead><tr><th colspan="7" class="datepicker-title" style="display: none;"></th></tr><tr><th class="prev">«</th><th colspan="5" class="datepicker-switch">2000-2090</th><th class="next">»</th></tr></thead><tbody><tr><td colspan="7"><span class="decade old">1990</span><span class="decade">2000</span><span class="decade">2010</span><span class="decade focused">2020</span><span class="decade">2030</span><span class="decade">2040</span><span class="decade">2050</span><span class="decade">2060</span><span class="decade">2070</span><span class="decade">2080</span><span class="decade">2090</span><span class="decade new">2100</span></td></tr></tbody><tfoot><tr><th colspan="7" class="today" style="display: none;">Today</th></tr><tr><th colspan="7" class="clear" style="display: none;">Clear</th></tr></tfoot></table></div><div class="datepicker-centuries" style="display: none;"><table class="table-condensed"><thead><tr><th colspan="7" class="datepicker-title" style="display: none;"></th></tr><tr><th class="prev">«</th><th colspan="5" class="datepicker-switch">2000-2900</th><th class="next">»</th></tr></thead><tbody><tr><td colspan="7"><span class="century old">1900</span><span class="century focused">2000</span><span class="century">2100</span><span class="century">2200</span><span class="century">2300</span><span class="century">2400</span><span class="century">2500</span><span class="century">2600</span><span class="century">2700</span><span class="century">2800</span><span class="century">2900</span><span class="century new">3000</span></td></tr></tbody><tfoot><tr><th colspan="7" class="today" style="display: none;">Today</th></tr><tr><th colspan="7" class="clear" style="display: none;">Clear</th></tr></tfoot></table></div></div></div>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-lg-4 col-form-label">Auto Close Datepicker</label>
+							<div class="col-lg-8">
+								<input type="text" class="form-control" id="datepicker-autoClose" placeholder="Auto Close Datepicker">
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-lg-4 col-form-label">Disabled Past Date</label>
+							<div class="col-lg-8">
+								<div class="input-group date" id="datepicker-disabled-past" data-date-format="dd-mm-yyyy" data-date-start-date="Date.default">
+									<input type="text" class="form-control" placeholder="Select Date">
+									<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+								</div>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-lg-4 col-form-label">Range Datepicker</label>
+							<div class="col-lg-8">
+								<div class="input-group input-daterange">
+									<input type="text" class="form-control" name="start" placeholder="Date Start">
+									<span class="input-group-addon">to</span>
+									<input type="text" class="form-control" name="end" placeholder="Date End">
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+				<!-- end panel-body -->
+			</div>
+			<!-- end panel -->
+			<!-- begin panel -->
+			<div class="panel panel-inverse" data-sortable-id="form-plugins-5">
+				<!-- begin panel-heading -->
+				<div class="panel-heading ui-sortable-handle">
+					<h4 class="panel-title">jQuery Autocomplete</h4>
+					<div class="panel-heading-btn">
+						<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
+						<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-redo"></i></a>
+						<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+						<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
+					</div>
+				</div>
+				<!-- end panel-heading -->
+				<!-- begin panel-body -->
+				<div class="panel-body panel-form">
+					<form class="form-horizontal form-bordered">
+						<div class="form-group row">
+							<label class="col-lg-4 col-form-label">Autocomplete</label>
+							<div class="col-lg-8">
+								<input type="text" name="" id="jquery-autocomplete" class="form-control ui-autocomplete-input" placeholder="Try typing 'a' or 'b'." autocomplete="off">
+							</div>
+						</div>
+					</form>
+				</div>
+				<!-- end panel-body -->
+			</div>
+			<!-- end panel -->
+			<!-- begin panel -->
+			<div class="panel panel-inverse" data-sortable-id="form-plugins-6">
+				<!-- begin panel-heading -->
+				<div class="panel-heading ui-sortable-handle">
+					<h4 class="panel-title">Bootstrap Combobox</h4>
+					<div class="panel-heading-btn">
+						<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
+						<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-redo"></i></a>
+						<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+						<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
+					</div>
+				</div>
+				<!-- end panel-heading -->
+				<!-- begin panel-body -->
+				<div class="panel-body panel-form">
+					<form class="form-horizontal form-bordered">
+						<div class="form-group row">
+							<label class="col-lg-4 col-form-label">Bootstrap Combobox</label>
+							<div class="col-lg-8">
+								<div class="combobox-container"> <input type="hidden" name="" value=""> <div class="input-group"> <input type="text" autocomplete="off" id="NaN" placeholder="Select Location" class="combobox"> <span class="input-group-addon dropdown-toggle" data-dropdown="dropdown"> <span class="caret"></span> <span class="glyphicon glyphicon-remove"></span> </span> </div> </div><select class="combobox" style="display: none;">
+									<option value="">Select Location</option>
+									<option value="PA">Pennsylvania</option>
+									<option value="CT">Connecticut</option>
+									<option value="NY">New York</option>
+									<option value="MD">Maryland</option>
+									<option value="VA">Virginia</option>
+								</select>
+							</div>
+						</div>
+					</form>
+				</div>
+				<!-- end panel-body -->
+			</div>
+			<!-- end panel -->
+			<!-- begin panel -->
+			<div class="panel panel-inverse" data-sortable-id="form-plugins-7">
+				<!-- begin panel-heading -->
+				<div class="panel-heading ui-sortable-handle">
+					<h4 class="panel-title">Select with Search</h4>
+					<div class="panel-heading-btn">
+						<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
+						<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-redo"></i></a>
+						<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+						<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
+					</div>
+				</div>
+				<!-- end panel-heading -->
+				<!-- begin panel-body -->
+				<div class="panel-body panel-form">
+					<form class="form-horizontal form-bordered">
+						<div class="form-group row">
+							<label class="col-lg-4 col-form-label">Default</label>
+							<div class="col-lg-8">
+								<p class="mb-2">Convert this</p>
+								<select class="form-control mb-3">
+									<option value="" selected="">Select a Country</option>
+									<option value="AF">Afghanistan</option>
+									<option value="AL">Albania</option>
+									<option value="DZ">Algeria</option>
+									<option value="AS">American Samoa</option>
+									<option value="AD">Andorra</option>
+									<option value="AO">Angola</option>
+									<option value="AI">Anguilla</option>
+									<option value="AQ">Antarctica</option>
+									<option value="AG">Antigua and Barbuda</option>
+								</select>
+								<p class="mb-2">Become this</p>
+								<div class="dropdown bootstrap-select form-control"><select class="form-control selectpicker" data-size="10" data-live-search="true" tabindex="-98">
+									<option value="" selected="">Select a Country</option>
+									<option value="AF">Afghanistan</option>
+									<option value="AL">Albania</option>
+									<option value="DZ">Algeria</option>
+									<option value="AS">American Samoa</option>
+									<option value="AD">Andorra</option>
+									<option value="AO">Angola</option>
+									<option value="AI">Anguilla</option>
+									<option value="AQ">Antarctica</option>
+									<option value="AG">Antigua and Barbuda</option>
+								</select><button type="button" class="btn dropdown-toggle btn-light" data-toggle="dropdown" role="combobox" aria-owns="bs-select-1" aria-haspopup="listbox" aria-expanded="false" title="Select a Country"><div class="filter-option"><div class="filter-option-inner"><div class="filter-option-inner-inner">Select a Country</div></div> </div></button><div class="dropdown-menu "><div class="bs-searchbox"><input type="text" class="form-control" autocomplete="off" role="combobox" aria-label="Search" aria-controls="bs-select-1" aria-autocomplete="list"></div><div class="inner show" role="listbox" id="bs-select-1" tabindex="-1"><ul class="dropdown-menu inner show" role="presentation"></ul></div></div></div>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-lg-4 col-form-label">Theme White</label>
+							<div class="col-lg-8">
+								<div class="dropdown bootstrap-select form-control"><select class="form-control selectpicker" data-size="10" data-live-search="true" data-style="btn-white" tabindex="-98">
+									<option value="" selected="">Select a Country</option>
+									<option value="AF">Afghanistan</option>
+									<option value="AL">Albania</option>
+									<option value="DZ">Algeria</option>
+									<option value="AS">American Samoa</option>
+									<option value="AD">Andorra</option>
+									<option value="AO">Angola</option>
+									<option value="AI">Anguilla</option>
+									<option value="AQ">Antarctica</option>
+									<option value="AG">Antigua and Barbuda</option>
+								</select><button type="button" class="btn dropdown-toggle btn-white" data-toggle="dropdown" role="combobox" aria-owns="bs-select-2" aria-haspopup="listbox" aria-expanded="false" title="Select a Country"><div class="filter-option"><div class="filter-option-inner"><div class="filter-option-inner-inner">Select a Country</div></div> </div></button><div class="dropdown-menu "><div class="bs-searchbox"><input type="text" class="form-control" autocomplete="off" role="combobox" aria-label="Search" aria-controls="bs-select-2" aria-autocomplete="list"></div><div class="inner show" role="listbox" id="bs-select-2" tabindex="-1"><ul class="dropdown-menu inner show" role="presentation"></ul></div></div></div>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-lg-4 col-form-label">Theme Inverse</label>
+							<div class="col-lg-8">
+								<div class="dropdown bootstrap-select form-control"><select class="form-control selectpicker" data-size="10" data-live-search="true" data-style="btn-inverse" tabindex="-98">
+									<option value="" selected="">Select a Country</option>
+									<option value="AF">Afghanistan</option>
+									<option value="AL">Albania</option>
+									<option value="DZ">Algeria</option>
+									<option value="AS">American Samoa</option>
+									<option value="AD">Andorra</option>
+									<option value="AO">Angola</option>
+									<option value="AI">Anguilla</option>
+									<option value="AQ">Antarctica</option>
+									<option value="AG">Antigua and Barbuda</option>
+								</select><button type="button" class="btn dropdown-toggle btn-inverse" data-toggle="dropdown" role="combobox" aria-owns="bs-select-3" aria-haspopup="listbox" aria-expanded="false" title="Select a Country"><div class="filter-option"><div class="filter-option-inner"><div class="filter-option-inner-inner">Select a Country</div></div> </div></button><div class="dropdown-menu "><div class="bs-searchbox"><input type="text" class="form-control" autocomplete="off" role="combobox" aria-label="Search" aria-controls="bs-select-3" aria-autocomplete="list"></div><div class="inner show" role="listbox" id="bs-select-3" tabindex="-1"><ul class="dropdown-menu inner show" role="presentation"></ul></div></div></div>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-lg-4 col-form-label">Theme Primary</label>
+							<div class="col-lg-8">
+								<div class="dropdown bootstrap-select form-control"><select class="form-control selectpicker" data-size="10" data-live-search="true" data-style="btn-primary" tabindex="-98">
+									<option value="" selected="">Select a Country</option>
+									<option value="AF">Afghanistan</option>
+									<option value="AL">Albania</option>
+									<option value="DZ">Algeria</option>
+									<option value="AS">American Samoa</option>
+									<option value="AD">Andorra</option>
+									<option value="AO">Angola</option>
+									<option value="AI">Anguilla</option>
+									<option value="AQ">Antarctica</option>
+									<option value="AG">Antigua and Barbuda</option>
+								</select><button type="button" class="btn dropdown-toggle btn-primary" data-toggle="dropdown" role="combobox" aria-owns="bs-select-4" aria-haspopup="listbox" aria-expanded="false" title="Select a Country"><div class="filter-option"><div class="filter-option-inner"><div class="filter-option-inner-inner">Select a Country</div></div> </div></button><div class="dropdown-menu "><div class="bs-searchbox"><input type="text" class="form-control" autocomplete="off" role="combobox" aria-label="Search" aria-controls="bs-select-4" aria-autocomplete="list"></div><div class="inner show" role="listbox" id="bs-select-4" tabindex="-1"><ul class="dropdown-menu inner show" role="presentation"></ul></div></div></div>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-lg-4 col-form-label">Theme Info</label>
+							<div class="col-lg-8">
+								<div class="dropdown bootstrap-select form-control"><select class="form-control selectpicker" data-size="10" data-live-search="true" data-style="btn-info" tabindex="-98">
+									<option value="" selected="">Select a Country</option>
+									<option value="AF">Afghanistan</option>
+									<option value="AL">Albania</option>
+									<option value="DZ">Algeria</option>
+									<option value="AS">American Samoa</option>
+									<option value="AD">Andorra</option>
+									<option value="AO">Angola</option>
+									<option value="AI">Anguilla</option>
+									<option value="AQ">Antarctica</option>
+									<option value="AG">Antigua and Barbuda</option>
+								</select><button type="button" class="btn dropdown-toggle btn-info" data-toggle="dropdown" role="combobox" aria-owns="bs-select-5" aria-haspopup="listbox" aria-expanded="false" title="Select a Country"><div class="filter-option"><div class="filter-option-inner"><div class="filter-option-inner-inner">Select a Country</div></div> </div></button><div class="dropdown-menu "><div class="bs-searchbox"><input type="text" class="form-control" autocomplete="off" role="combobox" aria-label="Search" aria-controls="bs-select-5" aria-autocomplete="list"></div><div class="inner show" role="listbox" id="bs-select-5" tabindex="-1"><ul class="dropdown-menu inner show" role="presentation"></ul></div></div></div>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-lg-4 col-form-label">Theme Success</label>
+							<div class="col-lg-8">
+								<div class="dropdown bootstrap-select form-control"><select class="form-control selectpicker" data-size="10" data-live-search="true" data-style="btn-success" tabindex="-98">
+									<option value="" selected="">Select a Country</option>
+									<option value="AF">Afghanistan</option>
+									<option value="AL">Albania</option>
+									<option value="DZ">Algeria</option>
+									<option value="AS">American Samoa</option>
+									<option value="AD">Andorra</option>
+									<option value="AO">Angola</option>
+									<option value="AI">Anguilla</option>
+									<option value="AQ">Antarctica</option>
+									<option value="AG">Antigua and Barbuda</option>
+								</select><button type="button" class="btn dropdown-toggle btn-success" data-toggle="dropdown" role="combobox" aria-owns="bs-select-6" aria-haspopup="listbox" aria-expanded="false" title="Select a Country"><div class="filter-option"><div class="filter-option-inner"><div class="filter-option-inner-inner">Select a Country</div></div> </div></button><div class="dropdown-menu "><div class="bs-searchbox"><input type="text" class="form-control" autocomplete="off" role="combobox" aria-label="Search" aria-controls="bs-select-6" aria-autocomplete="list"></div><div class="inner show" role="listbox" id="bs-select-6" tabindex="-1"><ul class="dropdown-menu inner show" role="presentation"></ul></div></div></div>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-lg-4 col-form-label">Theme Warning</label>
+							<div class="col-lg-8">
+								<div class="dropdown bootstrap-select form-control"><select class="form-control selectpicker" data-size="10" data-live-search="true" data-style="btn-warning" tabindex="-98">
+									<option value="" selected="">Select a Country</option>
+									<option value="AF">Afghanistan</option>
+									<option value="AL">Albania</option>
+									<option value="DZ">Algeria</option>
+									<option value="AS">American Samoa</option>
+									<option value="AD">Andorra</option>
+									<option value="AO">Angola</option>
+									<option value="AI">Anguilla</option>
+									<option value="AQ">Antarctica</option>
+									<option value="AG">Antigua and Barbuda</option>
+								</select><button type="button" class="btn dropdown-toggle btn-warning" data-toggle="dropdown" role="combobox" aria-owns="bs-select-7" aria-haspopup="listbox" aria-expanded="false" title="Select a Country"><div class="filter-option"><div class="filter-option-inner"><div class="filter-option-inner-inner">Select a Country</div></div> </div></button><div class="dropdown-menu "><div class="bs-searchbox"><input type="text" class="form-control" autocomplete="off" role="combobox" aria-label="Search" aria-controls="bs-select-7" aria-autocomplete="list"></div><div class="inner show" role="listbox" id="bs-select-7" tabindex="-1"><ul class="dropdown-menu inner show" role="presentation"></ul></div></div></div>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-lg-4 col-form-label">Theme Danger</label>
+							<div class="col-lg-8">
+								<div class="dropdown bootstrap-select form-control"><select class="form-control selectpicker" data-size="10" data-live-search="true" data-style="btn-danger" tabindex="-98">
+									<option value="" selected="">Select a Country</option>
+									<option value="AF">Afghanistan</option>
+									<option value="AL">Albania</option>
+									<option value="DZ">Algeria</option>
+									<option value="AS">American Samoa</option>
+									<option value="AD">Andorra</option>
+									<option value="AO">Angola</option>
+									<option value="AI">Anguilla</option>
+									<option value="AQ">Antarctica</option>
+									<option value="AG">Antigua and Barbuda</option>
+								</select><button type="button" class="btn dropdown-toggle btn-danger" data-toggle="dropdown" role="combobox" aria-owns="bs-select-8" aria-haspopup="listbox" aria-expanded="false" title="Select a Country"><div class="filter-option"><div class="filter-option-inner"><div class="filter-option-inner-inner">Select a Country</div></div> </div></button><div class="dropdown-menu "><div class="bs-searchbox"><input type="text" class="form-control" autocomplete="off" role="combobox" aria-label="Search" aria-controls="bs-select-8" aria-autocomplete="list"></div><div class="inner show" role="listbox" id="bs-select-8" tabindex="-1"><ul class="dropdown-menu inner show" role="presentation"></ul></div></div></div>
+							</div>
+						</div>
+					</form>
+				</div>
+				<!-- end panel-body -->
+			</div>
+			<!-- end panel -->
+			<!-- begin panel -->
+			<div class="panel panel-inverse" data-sortable-id="form-plugins-8">
+				<!-- begin panel-heading -->
+				<div class="panel-heading ui-sortable-handle">
+					<span class="label label-success mr-2">NEW</span> 
+					<h4 class="panel-title">Bootstrap Show Password</h4>
+					<div class="panel-heading-btn">
+						<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
+						<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-redo"></i></a>
+						<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+						<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
+					</div>
+				</div>
+				<!-- end panel-heading -->
+				<!-- begin panel-body -->
+				<div class="panel-body panel-form">
+					<form class="form-horizontal form-bordered">
+						<div class="form-group row">
+							<label class="col-lg-4 col-form-label">Show / Hide Password</label>
+							<div class="col-lg-8">
+								<div class="input-group"><input data-toggle="password" data-placement="after" class="form-control" type="password" value="123" placeholder="password"><input type="text" class="form-control" placeholder="password" style="display: none;"><div class="input-group-append" style="cursor: pointer;"><button tabindex="100" title="Click here to show/hide password" class="btn btn-outline-secondary" type="button">
+<i class="icon-eye-open fa fa-eye">
+
+</i></button></div></div>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-lg-4 col-form-label">Show / Hide Password</label>
+							<div class="col-lg-8">
+								<div class="input-group"><div class="input-group-prepend" style="cursor: pointer;"><button tabindex="100" title="Click here to show/hide password" class="btn btn-outline-secondary" type="button">
+<i class="icon-eye-open fa fa-eye">
+
+</i></button></div><input type="text" class="form-control" placeholder="password" style="display: none;"><input data-toggle="password" data-placement="before" class="form-control" type="password" value="123" placeholder="password"></div>
+							</div>
+						</div>
+					</form>
+				</div>
+				<!-- end panel-body -->
+			</div>
+			<!-- end panel -->
+			<!-- begin panel -->
+			<div class="panel panel-inverse" data-sortable-id="form-plugins-9">
+				<!-- begin panel-heading -->
+				<div class="panel-heading ui-sortable-handle">
+					<h4 class="panel-title">Password Indicator</h4>
+					<div class="panel-heading-btn">
+						<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
+						<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-redo"></i></a>
+						<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+						<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
+					</div>
+				</div>
+				<!-- end panel-heading -->
+				<!-- begin panel-body -->
+				<div class="panel-body panel-form">
+					<form class="form-horizontal form-bordered">
+						<div class="form-group row" id="pwd-default-container">
+							<label class="col-lg-4 col-form-label" for="pwstrength-default">Password</label>
+							<div class="col-lg-8">
+								<input type="password" name="pwstrength-default" id="pwstrength-default" class="form-control mb-2">
+								<div class="row align-items-center">
+									<div class="col-md-6">
+										<div id="pwstrength-default-text" class="text-muted f-w-600 f-s-11">Start typing password...</div>
+									</div>
+									<div class="col-md-6">
+										<div id="pwstrength-default-progress" class="pwstrength-progress"><div class="progress "><div class="progress-bar-striped progress-bar bg-danger" style="min-width: 1px; width: 1%;"><span class="password-verdict" style="white-space: nowrap;"></span></div></div></div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="form-group row" id="pwd-popover-container">
+							<label class="col-lg-4 col-form-label" for="password-input-group">With Popover</label>
+							<div class="col-lg-8">
+								<input type="text" name="pwstrength-popover" id="pwstrength-popover" class="form-control mb-2" data-original-title="" title="">
+								<div class="row align-items-center">
+									<div class="col-md-6">
+										<div id="pwstrength-popover-text" class="text-muted f-w-600 f-s-11">Start typing password...</div>
+									</div>
+									<div class="col-md-6">
+										<div id="pwstrength-popover-progress" class="pwstrength-progress"><div class="progress "><div class="progress-bar-striped progress-bar bg-danger" style="min-width: 1px; width: 1%;"><span class="password-verdict" style="white-space: nowrap;"></span></div></div></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+				<!-- end panel-body -->
+			</div>
+			<!-- end panel -->
+		</div>
+		<!-- end col-6 -->
+		<!-- begin col-6 -->
+		<div class="col-xl-6 ui-sortable">
+			<!-- begin panel -->
+			<div class="panel panel-inverse" data-sortable-id="form-plugins-10">
+				<!-- begin panel-heading -->
+				<div class="panel-heading ui-sortable-handle">
+					<span class="label label-success mr-2">NEW</span> 
+					<h4 class="panel-title">Bootstrap Color Palette</h4>
+					<div class="panel-heading-btn">
+						<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
+						<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-redo"></i></a>
+						<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+						<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
+					</div>
+				</div>
+				<!-- end panel-heading -->
+				<!-- begin panel-body -->
+				<div class="panel-body panel-form">
+					<form class="form-horizontal form-bordered">
+						<div class="form-group row">
+							<label class="col-lg-4 col-form-label">Color Palette Dropdown</label>
+							<div class="col-lg-8">
+								<div class="input-group">
+									<input class="form-control" name="color_palatte_1" data-id="color-palette-1">
+									<div class="input-group-append">
+										<ul class="dropdown-menu dropdown-menu-right">
+											<li>
+												<div id="color-palette-1" class="bootstrap-colorpalette"><div><button type="button" class="btn-color" style="background-color:#000000" data-value="#000000" title="#000000"></button><button type="button" class="btn-color" style="background-color:#424242" data-value="#424242" title="#424242"></button><button type="button" class="btn-color" style="background-color:#636363" data-value="#636363" title="#636363"></button><button type="button" class="btn-color" style="background-color:#9C9C94" data-value="#9C9C94" title="#9C9C94"></button><button type="button" class="btn-color" style="background-color:#CEC6CE" data-value="#CEC6CE" title="#CEC6CE"></button><button type="button" class="btn-color" style="background-color:#EFEFEF" data-value="#EFEFEF" title="#EFEFEF"></button><button type="button" class="btn-color" style="background-color:#F7F7F7" data-value="#F7F7F7" title="#F7F7F7"></button><button type="button" class="btn-color" style="background-color:#FFFFFF" data-value="#FFFFFF" title="#FFFFFF"></button></div><div><button type="button" class="btn-color" style="background-color:#FF0000" data-value="#FF0000" title="#FF0000"></button><button type="button" class="btn-color" style="background-color:#FF9C00" data-value="#FF9C00" title="#FF9C00"></button><button type="button" class="btn-color" style="background-color:#FFFF00" data-value="#FFFF00" title="#FFFF00"></button><button type="button" class="btn-color" style="background-color:#00FF00" data-value="#00FF00" title="#00FF00"></button><button type="button" class="btn-color" style="background-color:#00FFFF" data-value="#00FFFF" title="#00FFFF"></button><button type="button" class="btn-color" style="background-color:#0000FF" data-value="#0000FF" title="#0000FF"></button><button type="button" class="btn-color" style="background-color:#9C00FF" data-value="#9C00FF" title="#9C00FF"></button><button type="button" class="btn-color" style="background-color:#FF00FF" data-value="#FF00FF" title="#FF00FF"></button></div><div><button type="button" class="btn-color" style="background-color:#F7C6CE" data-value="#F7C6CE" title="#F7C6CE"></button><button type="button" class="btn-color" style="background-color:#FFE7CE" data-value="#FFE7CE" title="#FFE7CE"></button><button type="button" class="btn-color" style="background-color:#FFEFC6" data-value="#FFEFC6" title="#FFEFC6"></button><button type="button" class="btn-color" style="background-color:#D6EFD6" data-value="#D6EFD6" title="#D6EFD6"></button><button type="button" class="btn-color" style="background-color:#CEDEE7" data-value="#CEDEE7" title="#CEDEE7"></button><button type="button" class="btn-color" style="background-color:#CEE7F7" data-value="#CEE7F7" title="#CEE7F7"></button><button type="button" class="btn-color" style="background-color:#D6D6E7" data-value="#D6D6E7" title="#D6D6E7"></button><button type="button" class="btn-color" style="background-color:#E7D6DE" data-value="#E7D6DE" title="#E7D6DE"></button></div><div><button type="button" class="btn-color" style="background-color:#E79C9C" data-value="#E79C9C" title="#E79C9C"></button><button type="button" class="btn-color" style="background-color:#FFC69C" data-value="#FFC69C" title="#FFC69C"></button><button type="button" class="btn-color" style="background-color:#FFE79C" data-value="#FFE79C" title="#FFE79C"></button><button type="button" class="btn-color" style="background-color:#B5D6A5" data-value="#B5D6A5" title="#B5D6A5"></button><button type="button" class="btn-color" style="background-color:#A5C6CE" data-value="#A5C6CE" title="#A5C6CE"></button><button type="button" class="btn-color" style="background-color:#9CC6EF" data-value="#9CC6EF" title="#9CC6EF"></button><button type="button" class="btn-color" style="background-color:#B5A5D6" data-value="#B5A5D6" title="#B5A5D6"></button><button type="button" class="btn-color" style="background-color:#D6A5BD" data-value="#D6A5BD" title="#D6A5BD"></button></div><div><button type="button" class="btn-color" style="background-color:#E76363" data-value="#E76363" title="#E76363"></button><button type="button" class="btn-color" style="background-color:#F7AD6B" data-value="#F7AD6B" title="#F7AD6B"></button><button type="button" class="btn-color" style="background-color:#FFD663" data-value="#FFD663" title="#FFD663"></button><button type="button" class="btn-color" style="background-color:#94BD7B" data-value="#94BD7B" title="#94BD7B"></button><button type="button" class="btn-color" style="background-color:#73A5AD" data-value="#73A5AD" title="#73A5AD"></button><button type="button" class="btn-color" style="background-color:#6BADDE" data-value="#6BADDE" title="#6BADDE"></button><button type="button" class="btn-color" style="background-color:#8C7BC6" data-value="#8C7BC6" title="#8C7BC6"></button><button type="button" class="btn-color" style="background-color:#C67BA5" data-value="#C67BA5" title="#C67BA5"></button></div><div><button type="button" class="btn-color" style="background-color:#CE0000" data-value="#CE0000" title="#CE0000"></button><button type="button" class="btn-color" style="background-color:#E79439" data-value="#E79439" title="#E79439"></button><button type="button" class="btn-color" style="background-color:#EFC631" data-value="#EFC631" title="#EFC631"></button><button type="button" class="btn-color" style="background-color:#6BA54A" data-value="#6BA54A" title="#6BA54A"></button><button type="button" class="btn-color" style="background-color:#4A7B8C" data-value="#4A7B8C" title="#4A7B8C"></button><button type="button" class="btn-color" style="background-color:#3984C6" data-value="#3984C6" title="#3984C6"></button><button type="button" class="btn-color" style="background-color:#634AA5" data-value="#634AA5" title="#634AA5"></button><button type="button" class="btn-color" style="background-color:#A54A7B" data-value="#A54A7B" title="#A54A7B"></button></div><div><button type="button" class="btn-color" style="background-color:#9C0000" data-value="#9C0000" title="#9C0000"></button><button type="button" class="btn-color" style="background-color:#B56308" data-value="#B56308" title="#B56308"></button><button type="button" class="btn-color" style="background-color:#BD9400" data-value="#BD9400" title="#BD9400"></button><button type="button" class="btn-color" style="background-color:#397B21" data-value="#397B21" title="#397B21"></button><button type="button" class="btn-color" style="background-color:#104A5A" data-value="#104A5A" title="#104A5A"></button><button type="button" class="btn-color" style="background-color:#085294" data-value="#085294" title="#085294"></button><button type="button" class="btn-color" style="background-color:#311873" data-value="#311873" title="#311873"></button><button type="button" class="btn-color" style="background-color:#731842" data-value="#731842" title="#731842"></button></div><div><button type="button" class="btn-color" style="background-color:#630000" data-value="#630000" title="#630000"></button><button type="button" class="btn-color" style="background-color:#7B3900" data-value="#7B3900" title="#7B3900"></button><button type="button" class="btn-color" style="background-color:#846300" data-value="#846300" title="#846300"></button><button type="button" class="btn-color" style="background-color:#295218" data-value="#295218" title="#295218"></button><button type="button" class="btn-color" style="background-color:#083139" data-value="#083139" title="#083139"></button><button type="button" class="btn-color" style="background-color:#003163" data-value="#003163" title="#003163"></button><button type="button" class="btn-color" style="background-color:#21104A" data-value="#21104A" title="#21104A"></button><button type="button" class="btn-color" style="background-color:#4A1031" data-value="#4A1031" title="#4A1031"></button></div></div>
+											</li>
+										</ul>
+										<a href="#" class="btn btn-grey text-black-lighter" data-toggle="dropdown"><i class="fa fa-tint fa-lg"></i></a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-lg-4 col-form-label">Custom Color Palette</label>
+							<div class="col-lg-8">
+								<div class="row">
+									<div class="col-lg-6">
+										<input class="form-control" name="color_palatte_custom" data-id="color-palette-custom">
+									</div>
+									<div class="col-lg-6">
+										<div id="color-palette-custom" class="m-t-5 p-t-3 bootstrap-colorpalette"><div><button type="button" class="btn-color" style="background-color:#000000" data-value="#000000" title="#000000"></button><button type="button" class="btn-color" style="background-color:#424242" data-value="#424242" title="#424242"></button><button type="button" class="btn-color" style="background-color:#636363" data-value="#636363" title="#636363"></button><button type="button" class="btn-color" style="background-color:#9C9C94" data-value="#9C9C94" title="#9C9C94"></button><button type="button" class="btn-color" style="background-color:#CEC6CE" data-value="#CEC6CE" title="#CEC6CE"></button><button type="button" class="btn-color" style="background-color:#EFEFEF" data-value="#EFEFEF" title="#EFEFEF"></button><button type="button" class="btn-color" style="background-color:#EFF7F7" data-value="#EFF7F7" title="#EFF7F7"></button><button type="button" class="btn-color" style="background-color:#FFFFFF" data-value="#FFFFFF" title="#FFFFFF"></button></div></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+				<!-- end panel-body -->
+			</div>
+			<!-- end panel -->
+			<!-- begin panel -->
+			<div class="panel panel-inverse" data-sortable-id="form-plugins-11">
+				<!-- begin panel-heading -->
+				<div class="panel-heading ui-sortable-handle">
+					<span class="label label-success mr-2">NEW</span>
+					<h4 class="panel-title">jQuery Simple Colorpicker</h4>
+					<div class="panel-heading-btn">
+						<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
+						<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-redo"></i></a>
+						<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+						<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
+					</div>
+				</div>
+				<!-- end panel-heading -->
+				<!-- begin panel-body -->
+				<div class="panel-body panel-form">
+					<form class="form-horizontal form-bordered">
+						<div class="form-group row">
+							<label class="col-lg-4 col-form-label">Basic Usage</label>
+							<div class="col-lg-8">
+								<div class="input-group">
+									<select name="jquery-simplecolorpicker" style="display: none;">
+										<option value="#2d353c">Black</option>
+										<option value="#f0f3f4">Silver</option>
+										<option value="#b6c2c9">Grey</option>
+										<option value="#727cb6">Purple</option>
+										<option value="#348fe2">Primary</option>
+										<option value="#49b6d6">Aqua</option>
+										<option value="#00acac">Green</option>
+										<option value="#90ca4b">Lime</option>
+										<option value="#f59c1a">Orange</option>
+										<option value="#ffd900">Yellow</option>
+										<option value="#ff5b57">Red</option>
+									</select><span class="simplecolorpicker inline "><span class="color" title="Black" style="background-color: #2d353c;" data-color="#2d353c" data-selected="" role="button" tabindex="0"></span><span class="color" title="Silver" style="background-color: #f0f3f4;" data-color="#f0f3f4" role="button" tabindex="0"></span><span class="color" title="Grey" style="background-color: #b6c2c9;" data-color="#b6c2c9" role="button" tabindex="0"></span><span class="color" title="Purple" style="background-color: #727cb6;" data-color="#727cb6" role="button" tabindex="0"></span><span class="color" title="Primary" style="background-color: #348fe2;" data-color="#348fe2" role="button" tabindex="0"></span><span class="color" title="Aqua" style="background-color: #49b6d6;" data-color="#49b6d6" role="button" tabindex="0"></span><span class="color" title="Green" style="background-color: #00acac;" data-color="#00acac" role="button" tabindex="0"></span><span class="color" title="Lime" style="background-color: #90ca4b;" data-color="#90ca4b" role="button" tabindex="0"></span><span class="color" title="Orange" style="background-color: #f59c1a;" data-color="#f59c1a" role="button" tabindex="0"></span><span class="color" title="Yellow" style="background-color: #ffd900;" data-color="#ffd900" role="button" tabindex="0"></span><span class="color" title="Red" style="background-color: #ff5b57;" data-color="#ff5b57" role="button" tabindex="0"></span></span>
+								</div>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-lg-4 col-form-label">FontAwesome Theme</label>
+							<div class="col-lg-8">
+								<div class="input-group">
+									<select name="jquery-simplecolorpicker-fa" style="display: none;">
+										<option value="#2d353c">Black</option>
+										<option value="#f0f3f4">Silver</option>
+										<option value="#b6c2c9">Grey</option>
+										<option value="#727cb6">Purple</option>
+										<option value="#348fe2">Primary</option>
+										<option value="#49b6d6">Aqua</option>
+										<option value="#00acac">Green</option>
+										<option value="#90ca4b">Lime</option>
+										<option value="#f59c1a">Orange</option>
+										<option value="#ffd900">Yellow</option>
+										<option value="#ff5b57">Red</option>
+									</select><span class="simplecolorpicker inline fontawesome"><span class="color" title="Black" style="background-color: #2d353c;" data-color="#2d353c" data-selected="" role="button" tabindex="0"></span><span class="color" title="Silver" style="background-color: #f0f3f4;" data-color="#f0f3f4" role="button" tabindex="0"></span><span class="color" title="Grey" style="background-color: #b6c2c9;" data-color="#b6c2c9" role="button" tabindex="0"></span><span class="color" title="Purple" style="background-color: #727cb6;" data-color="#727cb6" role="button" tabindex="0"></span><span class="color" title="Primary" style="background-color: #348fe2;" data-color="#348fe2" role="button" tabindex="0"></span><span class="color" title="Aqua" style="background-color: #49b6d6;" data-color="#49b6d6" role="button" tabindex="0"></span><span class="color" title="Green" style="background-color: #00acac;" data-color="#00acac" role="button" tabindex="0"></span><span class="color" title="Lime" style="background-color: #90ca4b;" data-color="#90ca4b" role="button" tabindex="0"></span><span class="color" title="Orange" style="background-color: #f59c1a;" data-color="#f59c1a" role="button" tabindex="0"></span><span class="color" title="Yellow" style="background-color: #ffd900;" data-color="#ffd900" role="button" tabindex="0"></span><span class="color" title="Red" style="background-color: #ff5b57;" data-color="#ff5b57" role="button" tabindex="0"></span></span>
+								</div>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-lg-4 col-form-label">Dropdown Selection</label>
+							<div class="col-lg-8">
+								<div class="input-group m-t-5 m-b-5">
+									<select name="colorpicker-picker-longlist" style="display: none;">
+										<option value="#2d353c">Black</option>
+										<option value="#f0f3f4">Silver</option>
+										<option value="#b6c2c9">Grey</option>
+										<option value="#727cb6">Purple</option>
+										<option value="#348fe2">Primary</option>
+										<option value="#49b6d6">Aqua</option>
+										<option value="#00acac">Green</option>
+										<option value="#90ca4b">Lime</option>
+										<option value="#f59c1a">Orange</option>
+										<option value="#ffd900">Yellow</option>
+										<option value="#ff5b57">Red</option>
+									</select><span class="simplecolorpicker icon" title="Black" style="background-color: #2d353c;" role="button" tabindex="0"></span>
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+				<!-- end panel-body -->
+			</div>
+			<!-- end panel -->
+			<!-- begin panel -->
+			<div class="panel panel-inverse" data-sortable-id="form-plugins-12">
+				<!-- begin panel-heading -->
+				<div class="panel-heading ui-sortable-handle">
+					<h4 class="panel-title">Colopicker &amp; Timepicker</h4>
+					<div class="panel-heading-btn">
+						<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
+						<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-redo"></i></a>
+						<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+						<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
+					</div>
+				</div>
+				<!-- end panel-heading -->
+				<!-- begin panel-body -->
+				<div class="panel-body panel-form">
+					<form class="form-horizontal form-bordered">
+						<div class="form-group row">
+							<label class="col-lg-4 col-form-label">Default Color Picker</label>
+							<div class="col-lg-8">
+								<input type="text" value="#3498db" class="form-control colorpicker-element" id="colorpicker" data-colorpicker-id="1" data-original-title="" title="">
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-lg-4 col-form-label">Prepend Color Picker</label>
+							<div class="col-lg-8">
+								<div class="input-group colorpicker-component colorpicker-element" data-color="rgb(0, 0, 0)" data-color-format="rgb" id="colorpicker-append" data-colorpicker-id="2">
+									<input type="text" value="rgb(0, 0, 0)" readonly="" class="form-control" id="colorpicker-append-input" data-original-title="" title="">
+									<span class="input-group-append">
+										<label class="input-group-text" for="colorpicker-append-input"><i class="fa fa-square fa-lg"></i></label>
+									</span>
+								</div>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-lg-4 col-form-label">RGBA Color format</label>
+							<div class="col-lg-8">
+								<input type="text" class="form-control colorpicker-element" value="rgb(155,89,182,0.8)" id="colorpicker-rgba" data-color-format="rgba" data-colorpicker-id="3" data-original-title="" title="">
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-lg-4 col-form-label">Default timepicker</label>
+							<div class="col-lg-8">
+								<div class="input-group bootstrap-timepicker">
+									<input id="timepicker" type="text" class="form-control">
+									<span class="input-group-addon"><i class="fa fa-clock"></i></span>
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+				<!-- end panel-body -->
+			</div>
+			<!-- end panel -->
+			<!-- begin panel -->
+			<div class="panel panel-inverse" data-sortable-id="form-plugins-13">
+				<!-- begin panel-heading -->
+				<div class="panel-heading ui-sortable-handle">
+					<h4 class="panel-title">Ion Range Slider</h4>
+					<div class="panel-heading-btn">
+						<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
+						<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-redo"></i></a>
+						<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+						<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
+					</div>
+				</div>
+				<!-- end panel-heading -->
+				<!-- begin panel-body -->
+				<div class="panel-body panel-form">
+					<form class="form-horizontal form-bordered">
+						<div class="form-group row">
+							<label class="col-lg-4 col-form-label">Default</label>
+							<div class="col-lg-8">
+								<span class="irs irs--big js-irs-0"><span class="irs"><span class="irs-line" tabindex="0"></span><span class="irs-min" style="visibility: hidden;">$0</span><span class="irs-max" style="visibility: hidden;">$5 000</span><span class="irs-from" style="visibility: visible; left: -0.277319%;">$0</span><span class="irs-to" style="visibility: visible; left: 93.124%;">$5 000</span><span class="irs-single" style="visibility: hidden; left: 43.291%;">$0 — $5 000</span></span><span class="irs-grid"></span><span class="irs-bar" style="left: 2.13832%; width: 95.7234%;"></span><span class="irs-shadow shadow-from" style="display: none;"></span><span class="irs-shadow shadow-to" style="display: none;"></span><span class="irs-handle from" style="left: 0%;"><i></i><i></i><i></i></span><span class="irs-handle to" style="left: 95.7234%;"><i></i><i></i><i></i></span></span><input type="text" id="default_rangeSlider" name="default_rangeSlider" value="" class="irs-hidden-input" tabindex="-1" readonly="">
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-lg-4 col-form-label">Custom Range</label>
+							<div class="col-lg-8">
+								<span class="irs irs--flat js-irs-1"><span class="irs"><span class="irs-line" tabindex="0"></span><span class="irs-min" style="visibility: visible;">1 000 €</span><span class="irs-max" style="visibility: hidden;">100 000 €</span><span class="irs-from" style="visibility: visible; left: 24.2864%;">30 000 €</span><span class="irs-to" style="visibility: visible; left: 82.8189%;">90 000 €</span><span class="irs-single" style="visibility: hidden; left: 47.1193%;">30 000 € — 90 000 €</span></span><span class="irs-grid"></span><span class="irs-bar" style="left: 30.0014%; width: 58.5325%;"></span><span class="irs-shadow shadow-from" style="display: none;"></span><span class="irs-shadow shadow-to" style="display: none;"></span><span class="irs-handle from" style="left: 28.2907%;"><i></i><i></i><i></i></span><span class="irs-handle to type_last" style="left: 86.8233%;"><i></i><i></i><i></i></span></span><input type="text" id="customRange_rangeSlider" name="customRange_rangeSlider" value="" class="irs-hidden-input" tabindex="-1" readonly="">
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-lg-4 col-form-label">Custom Values</label>
+							<div class="col-lg-8">
+								<span class="irs irs--flat js-irs-2"><span class="irs"><span class="irs-line" tabindex="0"></span><span class="irs-min" style="visibility: hidden;">January</span><span class="irs-max" style="visibility: visible;">December</span><span class="irs-from" style="visibility: hidden;">0</span><span class="irs-to" style="visibility: hidden;">0</span><span class="irs-single" style="left: -3.70699%;">January</span></span><span class="irs-grid"></span><span class="irs-bar irs-bar--single" style="left: 0px; width: 1.71066%;"></span><span class="irs-shadow shadow-single" style="display: none;"></span><span class="irs-handle single" style="left: 0%;"><i></i><i></i><i></i></span></span><input type="text" id="customValue_rangeSlider" name="customValue_rangeSlider" value="" class="irs-hidden-input" tabindex="-1" readonly="">
+							</div>
+						</div>
+					</form>
+				</div>
+				<!-- end panel-body -->
+			</div>
+			<!-- end panel -->
+			<!-- begin panel -->
+			<div class="panel panel-inverse" data-sortable-id="form-plugins-14">
+				<!-- begin panel-heading -->
+				<div class="panel-heading ui-sortable-handle">
+					<h4 class="panel-title">Masked Input</h4>
+					<div class="panel-heading-btn">
+						<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
+						<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-redo"></i></a>
+						<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+						<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
+					</div>
+				</div>
+				<!-- end panel-heading -->
+				<!-- begin panel-body -->
+				<div class="panel-body panel-form">
+					<form class="form-horizontal form-bordered">
+						<div class="form-group row">
+							<label class="col-lg-4 col-form-label">Date</label>
+							<div class="col-lg-8">
+								<input type="text" class="form-control" id="masked-input-date" placeholder="dd/mm/yyyy">
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-lg-4 col-form-label">Phone</label>
+							<div class="col-lg-8">
+								<input type="text" class="form-control" id="masked-input-phone" placeholder="(999) 999-9999">
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-lg-4 col-form-label">Tax ID</label>
+							<div class="col-lg-8">
+								<input type="text" class="form-control" id="masked-input-tid" placeholder="99-9999999">
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-lg-4 col-form-label">Product Key</label>
+							<div class="col-lg-8">
+								<input type="text" class="form-control" id="masked-input-pkey" placeholder="a*-999-a999">
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-lg-4 col-form-label">SSN</label>
+							<div class="col-lg-8">
+								<input type="text" class="form-control" id="masked-input-ssn" placeholder="999/99/9999">
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-lg-4 col-form-label">SSN</label>
+							<div class="col-lg-8">
+								<input type="text" class="form-control" id="masked-input-pno" placeholder="AAA-9999-A">
+							</div>
+						</div>
+					</form>
+				</div>
+				<!-- end panel-body -->
+			</div>
+			<!-- end panel -->
+			<!-- begin panel -->
+			<div class="panel panel-inverse" data-sortable-id="form-plugins-15">
+				<!-- begin panel-heading -->
+				<div class="panel-heading ui-sortable-handle">
+					<h4 class="panel-title">jQuery Tag It</h4>
+					<div class="panel-heading-btn">
+						<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
+						<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-redo"></i></a>
+						<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+						<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
+					</div>
+				</div>
+				<!-- end panel-heading -->
+				<!-- begin panel-body -->
+				<div class="panel-body panel-form">
+					<form class="form-horizontal form-bordered">
+						<div class="form-group row">
+							<label class="col-lg-4 col-form-label">Default Tags Input with Autocomplete</label>
+							<div class="col-lg-8">
+								<ul id="jquery-tagIt-default" class="tagit ui-widget ui-widget-content ui-corner-all">
+									
+									
+								<li class="tagit-choice ui-widget-content ui-state-default ui-corner-all tagit-choice-editable"><span class="tagit-label">Tag1</span><a class="tagit-close"><span class="text-icon">×</span><span class="ui-icon ui-icon-close"></span></a><input type="hidden" value="Tag1" name="tags" class="tagit-hidden-field"></li><li class="tagit-choice ui-widget-content ui-state-default ui-corner-all tagit-choice-editable"><span class="tagit-label">Tag2</span><a class="tagit-close"><span class="text-icon">×</span><span class="ui-icon ui-icon-close"></span></a><input type="hidden" value="Tag2" name="tags" class="tagit-hidden-field"></li><li class="tagit-new"><input type="text" class="ui-widget-content ui-autocomplete-input" autocomplete="off"></li></ul>
+								<p>Try to enter "c++, java, php" </p>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-lg-4 col-form-label">Inverse Theme</label>
+							<div class="col-lg-8">
+								<ul id="jquery-tagIt-inverse" class="inverse tagit ui-widget ui-widget-content ui-corner-all">
+									
+									
+								<li class="tagit-choice ui-widget-content ui-state-default ui-corner-all tagit-choice-editable"><span class="tagit-label">Tag1</span><a class="tagit-close"><span class="text-icon">×</span><span class="ui-icon ui-icon-close"></span></a><input type="hidden" value="Tag1" name="tags" class="tagit-hidden-field"></li><li class="tagit-choice ui-widget-content ui-state-default ui-corner-all tagit-choice-editable"><span class="tagit-label">Tag2</span><a class="tagit-close"><span class="text-icon">×</span><span class="ui-icon ui-icon-close"></span></a><input type="hidden" value="Tag2" name="tags" class="tagit-hidden-field"></li><li class="tagit-new"><input type="text" class="ui-widget-content ui-autocomplete-input" autocomplete="off"></li></ul>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-lg-4 col-form-label">White Theme</label>
+							<div class="col-lg-8">
+								<ul id="jquery-tagIt-white" class="white tagit ui-widget ui-widget-content ui-corner-all">
+									
+									
+								<li class="tagit-choice ui-widget-content ui-state-default ui-corner-all tagit-choice-editable"><span class="tagit-label">Tag1</span><a class="tagit-close"><span class="text-icon">×</span><span class="ui-icon ui-icon-close"></span></a><input type="hidden" value="Tag1" name="tags" class="tagit-hidden-field"></li><li class="tagit-choice ui-widget-content ui-state-default ui-corner-all tagit-choice-editable"><span class="tagit-label">Tag2</span><a class="tagit-close"><span class="text-icon">×</span><span class="ui-icon ui-icon-close"></span></a><input type="hidden" value="Tag2" name="tags" class="tagit-hidden-field"></li><li class="tagit-new"><input type="text" class="ui-widget-content ui-autocomplete-input" autocomplete="off"></li></ul>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-lg-4 col-form-label">Primary Theme</label>
+							<div class="col-lg-8">
+								<ul id="jquery-tagIt-primary" class="primary tagit ui-widget ui-widget-content ui-corner-all">
+									
+									
+								<li class="tagit-choice ui-widget-content ui-state-default ui-corner-all tagit-choice-editable"><span class="tagit-label">Tag1</span><a class="tagit-close"><span class="text-icon">×</span><span class="ui-icon ui-icon-close"></span></a><input type="hidden" value="Tag1" name="tags" class="tagit-hidden-field"></li><li class="tagit-choice ui-widget-content ui-state-default ui-corner-all tagit-choice-editable"><span class="tagit-label">Tag2</span><a class="tagit-close"><span class="text-icon">×</span><span class="ui-icon ui-icon-close"></span></a><input type="hidden" value="Tag2" name="tags" class="tagit-hidden-field"></li><li class="tagit-new"><input type="text" class="ui-widget-content ui-autocomplete-input" autocomplete="off"></li></ul>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-lg-4 col-form-label">Info Theme</label>
+							<div class="col-lg-8">
+								<ul id="jquery-tagIt-info" class="info tagit ui-widget ui-widget-content ui-corner-all">
+									
+									
+								<li class="tagit-choice ui-widget-content ui-state-default ui-corner-all tagit-choice-editable"><span class="tagit-label">Tag1</span><a class="tagit-close"><span class="text-icon">×</span><span class="ui-icon ui-icon-close"></span></a><input type="hidden" value="Tag1" name="tags" class="tagit-hidden-field"></li><li class="tagit-choice ui-widget-content ui-state-default ui-corner-all tagit-choice-editable"><span class="tagit-label">Tag2</span><a class="tagit-close"><span class="text-icon">×</span><span class="ui-icon ui-icon-close"></span></a><input type="hidden" value="Tag2" name="tags" class="tagit-hidden-field"></li><li class="tagit-new"><input type="text" class="ui-widget-content ui-autocomplete-input" autocomplete="off"></li></ul>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-lg-4 col-form-label">Success Theme</label>
+							<div class="col-lg-8">
+								<ul id="jquery-tagIt-success" class="success tagit ui-widget ui-widget-content ui-corner-all">
+									
+									
+								<li class="tagit-choice ui-widget-content ui-state-default ui-corner-all tagit-choice-editable"><span class="tagit-label">Tag1</span><a class="tagit-close"><span class="text-icon">×</span><span class="ui-icon ui-icon-close"></span></a><input type="hidden" value="Tag1" name="tags" class="tagit-hidden-field"></li><li class="tagit-choice ui-widget-content ui-state-default ui-corner-all tagit-choice-editable"><span class="tagit-label">Tag2</span><a class="tagit-close"><span class="text-icon">×</span><span class="ui-icon ui-icon-close"></span></a><input type="hidden" value="Tag2" name="tags" class="tagit-hidden-field"></li><li class="tagit-new"><input type="text" class="ui-widget-content ui-autocomplete-input" autocomplete="off"></li></ul>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-lg-4 col-form-label">Warning Theme</label>
+							<div class="col-lg-8">
+								<ul id="jquery-tagIt-warning" class="warning tagit ui-widget ui-widget-content ui-corner-all">
+									
+									
+								<li class="tagit-choice ui-widget-content ui-state-default ui-corner-all tagit-choice-editable"><span class="tagit-label">Tag1</span><a class="tagit-close"><span class="text-icon">×</span><span class="ui-icon ui-icon-close"></span></a><input type="hidden" value="Tag1" name="tags" class="tagit-hidden-field"></li><li class="tagit-choice ui-widget-content ui-state-default ui-corner-all tagit-choice-editable"><span class="tagit-label">Tag2</span><a class="tagit-close"><span class="text-icon">×</span><span class="ui-icon ui-icon-close"></span></a><input type="hidden" value="Tag2" name="tags" class="tagit-hidden-field"></li><li class="tagit-new"><input type="text" class="ui-widget-content ui-autocomplete-input" autocomplete="off"></li></ul>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-lg-4 col-form-label">Danger Theme</label>
+							<div class="col-lg-8">
+								<ul id="jquery-tagIt-danger" class="danger tagit ui-widget ui-widget-content ui-corner-all">
+									
+									
+								<li class="tagit-choice ui-widget-content ui-state-default ui-corner-all tagit-choice-editable"><span class="tagit-label">Tag1</span><a class="tagit-close"><span class="text-icon">×</span><span class="ui-icon ui-icon-close"></span></a><input type="hidden" value="Tag1" name="tags" class="tagit-hidden-field"></li><li class="tagit-choice ui-widget-content ui-state-default ui-corner-all tagit-choice-editable"><span class="tagit-label">Tag2</span><a class="tagit-close"><span class="text-icon">×</span><span class="ui-icon ui-icon-close"></span></a><input type="hidden" value="Tag2" name="tags" class="tagit-hidden-field"></li><li class="tagit-new"><input type="text" class="ui-widget-content ui-autocomplete-input" autocomplete="off"></li></ul>
+							</div>
+						</div>
+					</form>
+				</div>
+				<!-- end panel-body -->
+			</div>
+			<!-- end panel -->
+			<!-- begin panel -->
+			<div class="panel panel-inverse" data-sortable-id="form-plugins-16">
+				<!-- begin panel-heading -->
+				<div class="panel-heading ui-sortable-handle">
+					<span class="label label-success mr-2">NEW</span>
+					<h4 class="panel-title"> Clipboard.js</h4>
+					<div class="panel-heading-btn">
+						<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
+						<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-redo"></i></a>
+						<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+						<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
+					</div>
+				</div>
+				<!-- end panel-heading -->
+				<!-- begin panel-body -->
+				<div class="panel-body panel-form">
+					<form class="form-horizontal form-bordered">
+						<div class="form-group row">
+							<label class="col-lg-4 col-form-label">Default</label>
+							<div class="col-lg-8">
+								<div class="input-group">
+									<input id="clipboard-default" type="text" class="form-control" value="https://github.com/zenorocha/clipboard.js.git">
+									<span class="input-group-append">
+										<button class="btn btn-inverse" type="button" data-clipboard-target="#clipboard-default"><i class="fa fa-clipboard"></i></button>
+									</span>
+								</div>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-lg-4 col-form-label">Cut to copy</label>
+							<div class="col-lg-8">
+								<textarea class="form-control m-b-10" id="clipboard-textarea" rows="7">Mussum ipsum cacilds...</textarea>
+								<button class="btn btn-inverse btn-sm" type="button" data-clipboard-target="#clipboard-textarea" data-clipboard-action="cut">Cut to clipboard</button>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-lg-4 col-form-label">without Form</label>
+							<div class="col-lg-8">
+								<button class="btn btn-inverse btn-sm" type="button" data-clipboard-text="Just because you can doesn't mean you should — clipboard.js">Click to copy</button>
+							</div>
+						</div>
+					</form>
+				</div>
+				<!-- end panel-body -->
+			</div>
+			<!-- end panel -->
+		</div>
+		<!-- end col-6 -->
+	</div>
+		
+		<!-- begin scroll to top btn -->
+		<a href="javascript:;" class="btn btn-icon btn-circle btn-success btn-scroll-to-top fade" data-click="scroll-top"><i class="fa fa-angle-up"></i></a>
+		<!-- end scroll to top btn -->
+	</div>
+	<!-- end page container -->
+	
+	<!-- ================== BEGIN PAGE LEVEL JS ================== -->
+	<script src="{% static '\assets\plugins\jquery-migrate\dist\jquery-migrate.min.js' %}"></script>
+	<script src="{% static '\assets\plugins\moment\min\moment.min.js' %}"></script>
+	<script src="{% static '\assets\plugins\bootstrap-datepicker\dist\js\bootstrap-datepicker.js' %}"></script>
+	<script src="{% static '\assets\plugins\ion-rangeslider\js\ion.rangeSlider.min.js' %}"></script>
+	<script src="{% static '\assets\plugins\bootstrap-colorpicker\dist\js\bootstrap-colorpicker.min.js' %}"></script>
+	<script src="{% static '\assets\plugins\jquery.maskedinput\src\jquery.maskedinput.js' %}"></script>
+	<script src="{% static '\assets\plugins\bootstrap-timepicker\js\bootstrap-timepicker.min.js' %}"></script>
+	<script src="{% static '\assets\plugins\pwstrength-bootstrap\dist\pwstrength-bootstrap.min.js' %}"></script>
+	<script src="{% static '\assets\plugins\@danielfarrell\bootstrap-combobox\js\bootstrap-combobox.js' %}"></script>
+	<script src="{% static '\assets\plugins\bootstrap-select\dist\js\bootstrap-select.min.js' %}"></script>
+	<script src="{% static '\assets\plugins\tag-it\js\tag-it.min.js' %}"></script>
+	<script src="{% static '\assets\plugins\bootstrap-daterangepicker\daterangepicker.js' %}"></script>
+	<script src="{% static '\assets\plugins\select2\dist\js\select2.min.js' %}"></script>
+	<script src="{% static '\assets\plugins\eonasdan-bootstrap-datetimepicker\build\js\bootstrap-datetimepicker.min.js' %}"></script>
+	<script src="{% static '\assets\plugins\bootstrap-show-password\dist\bootstrap-show-password.js' %}"></script>
+	<script src="{% static '\assets\plugins\bootstrap-colorpalette\js\bootstrap-colorpalette.js' %}"></script>
+	<script src="{% static '\assets\plugins\jquery-simplecolorpicker\jquery.simplecolorpicker.js' %}"></script>
+	<script src="{% static '\assets\plugins\clipboard\dist\clipboard.min.js' %}"></script>
+	<script src="{% static '\assets\js\demo\form-plugins.demo.js' %}"></script>
+	<!-- ================== END PAGE LEVEL JS ================== -->
+<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-53034621-1', 'auto');
+	  ga('send', 'pageview');
+
+	</script>
+</body>
+</html>
+
+{% endblock %}

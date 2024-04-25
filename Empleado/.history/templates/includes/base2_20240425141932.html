@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>
+		{% block titulo %}
+
+		{% endblock titulo %}
+	</title>	
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+	<script src="{% static '\assets\js\app.min.js' %}"></script>
+	<!-- ================== BEGIN BASE CSS STYLE ================== -->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+	<link href="{% static '\assets\css\default\app.min.css' %}" rel="stylesheet">
+	<!-- ================== END BASE CSS STYLE ================== -->
+</head>
+<body>
+    <div id="page-loader" class="fade show"><span class="spinner"></span></div>
+	    <div id="page-container" class="page-container fade page-sidebar-fixed page-header-fixed">
+            {% include 'includes/header2.html' %}
+            {% include 'includes/menu2.html' %}
+            <div id="content" class="content">
+                <!-- begin breadcrumb -->
+                <ol class="breadcrumb float-xl-right">
+                    <li class="breadcrumb-item"><a href="javascript:;">Home</a></li>
+                    <li class="breadcrumb-item active">Dashboard</li>
+                </ol>
+                <!-- end breadcrumb -->
+                <!-- begin page-header -->
+                <h1 class="page-header">Dashboard <small>header small text goes here...</small></h1>
+                <!-- end page-header -->
+                <div class="row">
+                    <!-- begin col-3 -->
+                    <div class="col-xl-10">
+                        					<!-- begin panel -->
+					<div class="panel panel-inverse" data-sortable-id="index-1">
+						<div class="panel-heading">
+							<h4 class="panel-title">Website Analytics (Last 7 Days)</h4>
+							<div class="panel-heading-btn">
+								<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
+								<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-redo"></i></a>
+								<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+								<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
+							</div>
+						</div>
+						<div class="panel-body pr-1">
+							<div id="interactive-chart" class="height-sm"></div>
+						</div>
+					</div>
+					<!-- end panel -->
+					
+</html>
+
+
+
