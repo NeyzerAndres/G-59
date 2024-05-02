@@ -1,0 +1,71 @@
+{% extends 'includes/base.html' %}
+
+{% block estilos %}
+<style>
+    /* Estilo para el campo de entrada de texto */
+    input[type="text"] {
+        width: 300px; /* Ancho del campo de texto */
+        padding: 10px; /* Espaciado interno del campo de texto */
+        border: 1px solid #ccc; /* Borde del campo de texto */
+        border-radius: 5px; /* Bordes redondeados del campo de texto */
+        box-sizing: border-box; /* Ajustar el tamaño total del campo */
+        margin-bottom: 10px; /* Espaciado inferior entre campos */
+    }
+
+    /* Estilo para la lista de errores */
+    .error-list {
+        color: red; /* Color del texto de error */
+    }
+</style>
+{% endblock estilos %}
+    
+
+{% block contenido %}
+<div class="col-xl-12">
+    <!-- begin panel -->
+    <div class="panel panel-inverse" data-sortable-id="form-stuff-3">
+        <!-- begin panel-heading -->
+        <div class="panel-heading">
+            <h4 class="panel-title">Sizing</h4>
+            <div class="panel-heading-btn">
+                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
+                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-redo"></i></a>
+                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+            </div>
+        </div>
+        <!-- end panel-heading -->
+        <!-- begin panel-body -->
+        <div class="panel-body p-t-10">
+            <h2>Change Password</h2>
+            <form method="post">
+                {% csrf_token %}
+                {% for field in form %}
+                    <div>
+                        <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                        {# Verifica si el campo es un campo de entrada #}
+                        {% if field|is_checkbox %}
+                            {# Si es un campo de selección, simplemente muéstralo #}
+                            {{ field }}
+                        {% else %}
+                            {# Si es un campo de entrada, agrega la clase CSS #}
+                            <input type="{{ field.field.widget.input_type }}" name="{{ field.html_name }}" class="my-custom-class" id="{{ field.id_for_label }}">
+                        {% endif %}
+                        {% if field.errors %}
+                            <ul>
+                                {% for error in field.errors %}
+                                    <li>{{ error }}</li>
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+                <button type="submit">Guardar cambios</button>
+            </form>
+        </div>  
+        </div>
+    </div><!-- end panel-body -->
+</div>    <!-- begin hljs-wrapper -->
+
+<!-- end col-6 -->
+<br>
+{% endblock contenido %}

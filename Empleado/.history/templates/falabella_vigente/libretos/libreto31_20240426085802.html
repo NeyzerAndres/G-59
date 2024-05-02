@@ -1,0 +1,142 @@
+{% extends 'includes/base.html' %} 
+{% load static %}
+<!-- Añadiendo el titulo de la pagína -->
+{% block titulo %}{{titulo}}{% endblock titulo %}
+<!-- Añadiendo la ruta del archivo -->
+{% block ruta %}
+<li class="breadcrumb-item"><a href="javascript:;">{{subruta}}</a></li>
+<li class="breadcrumb-item active">{{ruta}}</li>
+{% endblock ruta %}
+<!-- Añadiendo el Encabezado del modulo -->
+
+{% block encabezado %}{{encabezado}}{% endblock encabezado %}
+    
+{% block contenido %}
+<div class="col-xl-12">
+    <!-- begin panel -->
+    <div class="panel panel-inverse panel-with-tabs" data-sortable-id="ui-unlimited-tabs-1">
+        <div class="panel-heading p-0">
+            <div class="tab-overflow">
+                <ul class="nav nav-tabs nav-tabs-inverse">
+                    <li class="nav-item prev-button"><a href="javascript:;" data-click="prev-tab" class="nav-link text-primary"><i class="fa fa-arrow-left"></i></a></li>
+                    <li class="nav-item"><a href="#nav-tab-1" data-toggle="tab" class="nav-link active">Libreto 31</a></li>
+                    <li class="nav-item"><a href="#nav-tab-2" data-toggle="tab" class="nav-link">Nav Tab 2</a></li>
+                    <li class="nav-item"><a href="#nav-tab-3" data-toggle="tab" class="nav-link">Nav Tab 3</a></li>
+                    <li class="nav-item"><a href="#nav-tab-4" data-toggle="tab" class="nav-link">Nav Tab 4</a></li>
+                    <li class="nav-item"><a href="#nav-tab-5" data-toggle="tab" class="nav-link">Nav Tab 5</a></li>
+                    <li class="nav-item next-button"><a href="javascript:;" data-click="next-tab" class="nav-link text-primary"><i class="fa fa-arrow-right"></i></a></li>
+                </ul>
+            </div>
+            <!-- end nav-tabs -->
+            <div class="panel-heading-btn mr-2 ml-2 d-flex">
+                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-secondary" data-click="panel-expand"><i class="fa fa-expand"></i></a>
+            </div>
+        </div>
+        <!-- end panel-heading -->
+        <!-- begin tab-content -->
+        <div class="panel-body tab-content">
+            <!-- begin tab-pane -->
+            <div class="tab-pane fade active show" id="nav-tab-1">
+                <div class="tab-pane active" id="dashboard_fbv" role="tabpanel">
+                    <div class="p-20">
+                        <iframe title="Productividad Diaria" width="100%" height="580" src="https://app.powerbi.com/view?r=eyJrIjoiODk0OTkwZjAtNjZhZi00YmE4LTkwNmItNzBhZDJlNjRkNDk4IiwidCI6IjgwYWQwOTc3LTc0MmItNDk3Yi1iNzRiLThkZjRhYmNjNGUzYiJ9" frameborder="0" allowFullScreen="true"></iframe>
+                    </div>
+                </div>
+            </div>
+            <!-- end tab-pane -->
+            <!-- begin tab-pane -->
+            <div class="tab-pane fade" id="nav-tab-2">
+                <h3 class="m-t-10">Nav Tab 2</h3>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                    Integer ac dui eu felis hendrerit lobortis. Phasellus elementum, nibh eget adipiscing porttitor, 
+                    est diam sagittis orci, a ornare nisi quam elementum tortor. 
+                    Proin interdum ante porta est convallis dapibus dictum in nibh. 
+                    Aenean quis massa congue metus mollis fermentum eget et tellus. 
+                    Aenean tincidunt, mauris ut dignissim lacinia, nisi urna consectetur sapien, 
+                    nec eleifend orci eros id lectus.
+                </p>
+                <p>
+                    Aenean eget odio eu justo mollis consectetur non quis enim. 
+                    Vivamus interdum quam tortor, et sollicitudin quam pulvinar sit amet. 
+                    Donec facilisis auctor lorem, quis mollis metus dapibus nec. Donec interdum tellus vel mauris vehicula, 
+                    at ultrices ex gravida. Maecenas at elit tincidunt, vulputate augue vitae, vulputate neque.
+                    Aenean vel quam ligula. Etiam faucibus aliquam odio eget condimentum. 
+                    Cras lobortis, orci nec eleifend ultrices, orci elit pellentesque ex, eu sodales felis urna nec erat. 
+                    Fusce lacus est, congue quis nisi quis, sodales volutpat lorem.
+                </p>
+            </div>
+            <!-- end tab-pane -->
+            <!-- begin tab-pane -->
+            <div class="tab-pane fade" id="nav-tab-3">
+                <h3 class="m-t-10">Nav Tab 3</h3>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                    Integer ac dui eu felis hendrerit lobortis. Phasellus elementum, nibh eget adipiscing porttitor, 
+                    est diam sagittis orci, a ornare nisi quam elementum tortor. 
+                    Proin interdum ante porta est convallis dapibus dictum in nibh. 
+                    Aenean quis massa congue metus mollis fermentum eget et tellus. 
+                    Aenean tincidunt, mauris ut dignissim lacinia, nisi urna consectetur sapien, 
+                    nec eleifend orci eros id lectus.
+                </p>
+                <p>
+                    Aenean eget odio eu justo mollis consectetur non quis enim. 
+                    Vivamus interdum quam tortor, et sollicitudin quam pulvinar sit amet. 
+                    Donec facilisis auctor lorem, quis mollis metus dapibus nec. Donec interdum tellus vel mauris vehicula, 
+                    at ultrices ex gravida. Maecenas at elit tincidunt, vulputate augue vitae, vulputate neque.
+                    Aenean vel quam ligula. Etiam faucibus aliquam odio eget condimentum. 
+                    Cras lobortis, orci nec eleifend ultrices, orci elit pellentesque ex, eu sodales felis urna nec erat. 
+                    Fusce lacus est, congue quis nisi quis, sodales volutpat lorem.
+                </p>
+            </div>
+            <!-- end tab-pane -->
+            <!-- begin tab-pane -->
+            <div class="tab-pane fade" id="nav-tab-4">
+                <h3 class="m-t-10">Nav Tab 4</h3>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                    Integer ac dui eu felis hendrerit lobortis. Phasellus elementum, nibh eget adipiscing porttitor, 
+                    est diam sagittis orci, a ornare nisi quam elementum tortor. 
+                    Proin interdum ante porta est convallis dapibus dictum in nibh. 
+                    Aenean quis massa congue metus mollis fermentum eget et tellus. 
+                    Aenean tincidunt, mauris ut dignissim lacinia, nisi urna consectetur sapien, 
+                    nec eleifend orci eros id lectus.
+                </p>
+                <p>
+                    Aenean eget odio eu justo mollis consectetur non quis enim. 
+                    Vivamus interdum quam tortor, et sollicitudin quam pulvinar sit amet. 
+                    Donec facilisis auctor lorem, quis mollis metus dapibus nec. Donec interdum tellus vel mauris vehicula, 
+                    at ultrices ex gravida. Maecenas at elit tincidunt, vulputate augue vitae, vulputate neque.
+                    Aenean vel quam ligula. Etiam faucibus aliquam odio eget condimentum. 
+                    Cras lobortis, orci nec eleifend ultrices, orci elit pellentesque ex, eu sodales felis urna nec erat. 
+                    Fusce lacus est, congue quis nisi quis, sodales volutpat lorem.
+                </p>
+            </div>
+            <!-- end tab-pane -->
+            <!-- begin tab-pane -->
+            <div class="tab-pane fade" id="nav-tab-5">
+                <h3 class="m-t-10">Nav Tab 5</h3>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                    Integer ac dui eu felis hendrerit lobortis. Phasellus elementum, nibh eget adipiscing porttitor, 
+                    est diam sagittis orci, a ornare nisi quam elementum tortor. 
+                    Proin interdum ante porta est convallis dapibus dictum in nibh. 
+                    Aenean quis massa congue metus mollis fermentum eget et tellus. 
+                    Aenean tincidunt, mauris ut dignissim lacinia, nisi urna consectetur sapien, 
+                    nec eleifend orci eros id lectus.
+                </p>
+                <p>
+                    Aenean eget odio eu justo mollis consectetur non quis enim. 
+                    Vivamus interdum quam tortor, et sollicitudin quam pulvinar sit amet. 
+                    Donec facilisis auctor lorem, quis mollis metus dapibus nec. Donec interdum tellus vel mauris vehicula, 
+                    at ultrices ex gravida. Maecenas at elit tincidunt, vulputate augue vitae, vulputate neque.
+                    Aenean vel quam ligula. Etiam faucibus aliquam odio eget condimentum. 
+                    Cras lobortis, orci nec eleifend ultrices, orci elit pellentesque ex, eu sodales felis urna nec erat. 
+                    Fusce lacus est, congue quis nisi quis, sodales volutpat lorem.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock contenido %}
+    

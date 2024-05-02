@@ -1,0 +1,30 @@
+{% extends 'includes/base.html' %}
+
+
+{% block contenido %}
+<div class="panel-body">
+    <h2>Change Password</h2>
+    <form method="post">
+        {% csrf_token %}
+        {% for field in form %}
+            <div>
+                <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                {{ field }}
+                {% if field.errors %}
+                    <ul>
+                        {% for error in field.errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </div>
+        {% endfor %}
+        <button type="submit">Change Password</button>
+    </form>
+</div>     
+
+<br>
+
+
+{% endblock contenido %}
+    
