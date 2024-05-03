@@ -1,0 +1,14 @@
+{% extends 'includes/base.html' %}
+{% load static %}
+
+
+{% block contenido %}
+<br>    
+<div>
+    <h2>Sala de Chat: {{room.name}}</h2>
+    <div id="id_contenido"></div>
+    <div id="id_chat">
+        <input type="text" classid="id_mensajes">
+    </div>
+</div>            
+{% endblock contenido %}

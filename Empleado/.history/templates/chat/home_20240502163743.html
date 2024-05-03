@@ -1,0 +1,13 @@
+{% extends 'includes/base.html' %}
+{% load static %}
+
+
+{% block contenido %}
+    <div>
+    <h3>Lista de Usuarios</h3>
+        {% for room in rooms %}
+            <a class="btn btn-success">room.name</a>
+        {% endfor %}
+    </div>       
+
+{% endblock contenido %}

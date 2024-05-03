@@ -1,0 +1,17 @@
+{% extends 'includes/base.html' %} 
+{% load static %}
+<!-- Añadiendo el titulo de la pagína -->
+{% block titulo %}{{titulo}}{% endblock titulo %}
+<!-- Añadiendo la ruta del archivo -->
+{% block ruta %}
+<li class="breadcrumb-item"><a href="javascript:;">{{subruta}}</a></li>
+<li class="breadcrumb-item active">{{ruta}}</li>
+{% endblock ruta %}
+<!-- Añadiendo el Encabezado del modulo -->
+
+{% block encabezado %}{{encabezado}}{% endblock encabezado %}
+    
+{% block contenido %}
+
+{% endblock contenido %}
+    
