@@ -1,0 +1,61 @@
+{% extends 'includes/base.html' %}
+{% load static %}
+
+
+{% block contenido %}
+    <!-- <div>
+    <h3>Lista de Usuarios</h3>
+    <br>
+        {% for room in rooms %}
+            <a class="btn btn-danger" href=" {% url 'chat_app:room' room.id %} " style="color: azure;">{{room.name}}</a>
+        {% endfor %}
+    </div>        -->
+
+    <div class="modal fade" id="modal-widget-list">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Widget List</h4>
+                    <a href="#" data-dismiss="modal" class="close">&times;</a>
+                </div>
+                <!-- begin hljs-wrapper -->
+                <div class="hljs-wrapper m-b-0">
+                    <button type="button" class="btn btn-grey btn-sm btn-clipboard width-60" data-clipboard-target="#source-widget-list">Copy</button>
+                    <pre class="m-b-0"><code class="html" id="source-widget-list">&lt;!-- begin widget-list --&gt;
+&lt;div class="widget-list widget-list-rounded m-b-30<span class="hljs-string" data-id="widget-doc" data-dark-doc=" inverse-mode" data-light-doc=""></span>"&gt;
+&lt;!-- begin widget-list-item --&gt;
+&lt;div class="widget-list-item"&gt;
+&lt;div class="widget-list-media"&gt;
+  &lt;img src="../assets/img/user/user-1.jpg" class="rounded" /&gt;
+&lt;/div&gt;
+&lt;div class="widget-list-content"&gt;
+  &lt;h4 class="widget-list-title"&gt;Christopher Struth&lt;/h4&gt;
+  &lt;p class="widget-list-desc"&gt;Bank Transfer&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="widget-list-action"&gt;
+  &lt;a href="#" data-toggle="dropdown" class="text-muted pull-right"&gt;
+    &lt;i class="fa fa-ellipsis-h f-s-14"&gt;&lt;/i&gt;
+  &lt;/a&gt;
+  &lt;ul class="dropdown-menu dropdown-menu-right"&gt;
+    ...
+  &lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- end widget-list-item --&gt;
+&lt;/div&gt;
+&lt;!-- end widget-list --&gt;</code></pre>
+                </div>
+                <!-- end hljs-wrapper -->
+                <div class="modal-footer">
+                    <a href="#" data-dismiss="modal" class="btn btn-default">Close</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+{% endblock contenido %}

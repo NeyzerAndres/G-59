@@ -1,0 +1,46 @@
+{% extends 'includes/base.html' %}
+{% load static %}
+
+
+{% block contenido %}
+    <!-- <div>
+    <h3>Lista de Usuarios</h3>
+    <br>
+        {% for room in rooms %}
+            <a class="btn btn-danger" href=" {% url 'chat_app:room' room.id %} " style="color: azure;">{{room.name}}</a>
+        {% endfor %}
+    </div>        -->
+    <div class="col-lg-12 col-xl-4">
+        <!-- begin row -->
+        <div class="row">
+            <!-- begin col-12 -->
+            <div class="col-xl-12 col-lg-6">
+                <!-- begin widget-list -->
+                <div class="m-b-10 f-s-10 m-t-10">
+                    <a href="#modal-widget-list" class="pull-right f-s-10 text-grey-darker m-r-3 f-w-700" data-toggle="modal">source code</a>
+                    <b class="text-inverse"><h3>Usuarios</h3></b>
+                </div>
+                <div class="widget-list widget-list-rounded m-b-30" data-id="widget">
+                    <!-- begin widget-list-item -->
+                    <div class="widget-list-item">
+                        <div class="widget-list-media">
+                            <img src="{% static '\assets\img\user\user-13.jpeg' %}" alt="" class="rounded">
+                        </div>
+                        <div class="widget-list-content">
+                            <h4 class="widget-list-title">Janie Flowers</h4>
+                            <p class="widget-list-desc">Bank Transfer</p>
+                        </div>
+                                <a href="#" class="dropdown-item">Option 3</a>
+                    </div>
+                    <!-- end widget-list-item -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+{% endblock contenido %}
